@@ -15,8 +15,8 @@ Vdd vdd gnd 'SUPPLY'
 V1 A0_in gnd pulse 0 1.8 1u 10p 10p 2u 3u
 V2 B0_in gnd pulse 0 1.8 3u 10p 10p 1u 2u
 V3 A1_in gnd pulse 0 1.8 2u 10p 10p 2u 5u
-V4 B1_in gnd pulse 0 1.8 1.5u 10p 10p 3u 5u
-V5 A2_in gnd pulse 0 1.8 0 10p 10p 2u 5u
+V4 B1_in gnd pulse 0 1.8 2u 10p 10p 1u 3u
+V5 A2_in gnd pulse 0 1.8 1u 10p 10p 2u 3u
 V6 B2_in gnd pulse 0 1.8 3u 1n 1n 2u 5u
 V7 A3_in gnd pulse 0 1.8 1.5u 10p 10p 1u 2u
 V8 B3_in gnd pulse 0 1.8 4u 10p 10p 1u 2u
@@ -79,6 +79,7 @@ X27 C3_inv C3 vdd gnd inverter width_P=40*LAMBDA width_N=20*LAMBDA
 
 X28 A3 B3 C3 S3_out A3_inv B3_inv C3_inv vdd gnd xor
 
+
 .tran 10n 10u 0
 
 .control
@@ -88,5 +89,5 @@ set hcopypscolor = 1
 set color0 = white
 *Grid and text color
 set color1 = black
-plot V(A2) V(B2)+2 V(c2)+4 V(S2_out)+6
+plot V(s2_out) 
 .endc
