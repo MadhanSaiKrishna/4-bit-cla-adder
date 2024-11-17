@@ -1,0 +1,53 @@
+.subckt  dff b_in b clk vdd gnd width_P=40*LAMBDA
++ width_N=20*LAMBDA
+
+.param width_P = 40*LAMBDA
+.param width_N = 20*LAMBDA
+
+*Need to do sizing
+
+M1 n1 b_in vdd vdd CMOSP W={width_P} L={2*LAMBDA}
++AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
++AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+M2 n2 clk vdd vdd CMOSP W={width_P} L={2*LAMBDA}
++AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
++AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+M3 n2 b_in gnd gnd CMOSN W={width_N} L={2*LAMBDA}
++AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
++AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+M4 n3 clk vdd vdd CMOSP W={width_P} L={2*LAMBDA}
++AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
++AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+M5 n3 n2 n4 n4 CMOSN W={width_N} L={2*LAMBDA}
++AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
++AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+M6 n4 clk gnd gnd CMOSN W={width_N} L={2*LAMBDA}
++AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
++AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+M7 n5 n3 vdd vdd CMOSP W={width_P} L={2*LAMBDA}
++AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
++AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+M8 n5 clk n6 n6 CMOSN W={width_N} L={2*LAMBDA}
++AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
++AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+M9 n6 n3 gnd gnd CMOSN W={width_N} L={2*LAMBDA}
++AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
++AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+M10 b n5 vdd vdd CMOSP W={width_P} L={2*LAMBDA}
++AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
++AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+M11 b n5 gnd gnd CMOSN W={width_N} L={2*LAMBDA}
++AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
++AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+.ends
