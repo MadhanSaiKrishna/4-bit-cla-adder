@@ -13,15 +13,15 @@
 Vdd vdd gnd 'SUPPLY'
 
 V1 A0_in gnd pulse 0 1.8 0u 10p 10p 1u 3u
-V2 B0_in gnd pulse 0 1.8 0u 10p 10p 1u 4u
-V3 A1_in gnd pulse 0 1.8 2u 10p 10p 2u 4u
-V4 B1_in gnd pulse 0 1.8 2u 10p 10p 1u 3u
-V5 A2_in gnd pulse 0 1.8 0 10p 10p 1u 5u
-V6 B2_in gnd pulse 0 1.8 3u 1n 1n 2u 5u
-V7 A3_in gnd pulse 0 1.8 1.5u 10p 10p 1u 4u
-V8 B3_in gnd pulse 0 1.8 1u 10p 10p 1u 3u
+V2 B0_in gnd pulse 0 1.8 0u 10p 10p 1u 3u
+V3 A1_in gnd pulse 0 1.8 0.5u 10p 10p 1u 3u
+V4 B1_in gnd pulse 0 1.8 0.9u 10p 10p 1u 3u
+V5 A2_in gnd pulse 0 1.8 0u 10p 10p 1u 3u
+V6 B2_in gnd pulse 0 1.8 0u 10p 10p 1u 3u
+V7 A3_in gnd pulse 0 1.8 0u 10p 10p 1u 3u
+V8 B3_in gnd pulse 0 1.8 0u 10p 10p 1u 3u
 
-V9 clk gnd pulse 0 1.8 1.3u 10p 10p 1u 2u
+V9 clk gnd pulse 0 1.8 0.7u 10p 10p 1u 3u
 
 V10 Cin gnd dc 0
 
@@ -81,5 +81,5 @@ set hcopypscolor = 1
 set color0 = white
 *Grid and text color
 set color1 = black
-plot V(clk) V(A3_in)+2 V(B3_in)+4 V(S3)+6 V(Cout)+8
+plot V(clk) V(A1_in)+2 V(A1)+4 V(B1_in)+6 V(B1)+8 V(S1)+10 V(C1)+12 V(c2)+14
 .endc

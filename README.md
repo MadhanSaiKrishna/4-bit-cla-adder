@@ -3,6 +3,8 @@
 - [ ] Task 1: Size the mosfets in TSPC d flip flop
 - [ ] Task 2: Change the sizing of the mosfets in PUN and PDN of carry and check the output (depending on the path the sizing can be decreased)
 - [ ] Task 3: Verify the output of S0_out, S1_out, S2_out, S3_out, C0,C1,C2,C3
+- [ ] Task 4: Set the inital coditions for the carry and sum bits before the start of the positive edge of the clock
+- [ ] Task 5: Find the timing constraints, delay and power consumption
 
 ## Tips
 - While designing the cmos inverters, overshoots can be observed in the output when the input transition from high to low or low to high.  This might be due to rapid change in the input and there is no load capacitance to stabilize the output. You can model the parasitic capacitance at the output node with a small capacitance in the spice to avoid this. (`Note`: This is for pre layout simulations)
