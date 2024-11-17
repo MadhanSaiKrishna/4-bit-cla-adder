@@ -1,10 +1,9 @@
-.subckt  dff b_in b clk vdd gnd width_P=40*LAMBDA
-+ width_N=20*LAMBDA
+.subckt  dff b_in b clk vdd gnd
 
 .param width_P = 40*LAMBDA
 .param width_N = 20*LAMBDA
 
-*Need to do sizing
+*
 
 M1 n1 b_in vdd vdd CMOSP W={width_P} L={2*LAMBDA}
 +AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
