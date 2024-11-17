@@ -8,6 +8,11 @@
 - While designing the cmos inverters, overshoots can be observed in the output when the input transition from high to low or low to high.  This might be due to rapid change in the input and there is no load capacitance to stabilize the output. You can model the parasitic capacitance at the output node with a small capacitance in the spice to avoid this. (`Note`: This is for pre layout simulations)
 - Drain and Source nodes in mosfets can be interchanged due to the symmetry of mosfet.
 
+## Doubts
+- My CMOS static XOR gate designed intially for three inputs didn't work out. Why?
+- Cascading two 2 input XOR gates which takes ai,bi,ai_inv, bi_inv as input didn't work but cascading two 2 input XOR gates which takes ai, bi and computes ai_inv, bi_inv worked. Why?
+
+
 # NGSpice Syntax
 
 `PULSE(V1 V2 TD TR TF PW PER NP)`
