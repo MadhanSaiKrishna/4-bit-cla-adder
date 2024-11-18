@@ -5,7 +5,6 @@ test
 Vdd vdd gnd 'SUPPLY'
 .include TSMC_180nm.txt
 .include inverter.cir
-.include three_input_xor.cir
 .include two_input_xor.cir
 
 V1 A0 gnd pulse 0 1.8 3u 10p 10p 2u 5u

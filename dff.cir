@@ -49,4 +49,7 @@ M11 b n5 gnd gnd CMOSN W={width_N} L={2*LAMBDA}
 +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
 +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
 
+.ic v(n5) = 1.8
+* Initial condition to make sure no intermediate values occur in the output.
+
 .ends

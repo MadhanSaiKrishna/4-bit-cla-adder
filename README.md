@@ -1,9 +1,9 @@
 ## To Do List
 
-- [ ] Task 1: Size the mosfets in TSPC d flip flop
-- [ ] Task 2: Change the sizing of the mosfets in PUN and PDN of carry and check the output (depending on the path the sizing can be decreased)
-- [ ] Task 3: Verify the output of S0_out, S1_out, S2_out, S3_out, C0,C1,C2,C3
-- [ ] Task 4: Set the inital coditions for the carry and sum bits before the start of the positive edge of the clock
+- [x] Task 1: Size the mosfets in TSPC d flip flop
+- [x] Task 2: Change the sizing of the mosfets in PUN and PDN of carry and check the output (depending on the path the sizing can be decreased)
+- [x] Task 3: Verify the output of S0_out, S1_out, S2_out, S3_out, C0,C1,C2,C3
+- [x] Task 4: Set the inital coditions for the carry and sum bits before the start of the positive edge of the clock
 - [ ] Task 5: Find the timing constraints, delay and power consumption
 
 ## Tips
@@ -14,6 +14,25 @@
 - My CMOS static XOR gate designed intially for three inputs didn't work out. Why?
 - Cascading two 2 input XOR gates which takes ai,bi,ai_inv, bi_inv as input didn't work but cascading two 2 input XOR gates which takes ai, bi and computes ai_inv, bi_inv worked. Why?
 
+## Delays
+For A0
+- tpcq (A0_in to A0)               =  2.366684e-10
+- tpd  (A0 to S0_out)               =  3.221874e-10
+- tpcq (S0_out to S0)                =  1.196978e-10
+
+For A1
+- tpcq (A1_in to A1)               =  1.781366e-10
+- tpd  (A1 to S1_out)               =  3.226738e-10
+- tpcq (S1_out to S1)               =  1.196977e-10
+
+For A2 
+- tpcq (A2_in to A2)                =  1.620914e-10
+- tpd  (A2 to S2_out)               =  3.183957e-10
+- tpcq (S2_out to S2)               =  1.276660e-10
+
+
+## Note
+1. In the carry circuit, i've considered equal sizing for all the mosfets in pdn and pun to make the layout symmetric and easier.
 
 # NGSpice Syntax
 
@@ -41,3 +60,19 @@ tstop - final time
 tstart - start time 
 tmax - max step size 
 uic -  use initial conditions
+
+## Design Parameters
+lambda = 0.09u  
+L = 2 x lambda = 0.18u  
+width_N = 20 x lambda = 1.8u  
+width_P = 40 x lambda = 3.6u
+
+## Design Rules
+1. Metal and diffusion have minimum width and spacing of 4 x lambda
+2. Polysilicon uses a width of 2 x lambda
+3. Polysilicon overlaps diffusion by 2 x lambda where a transistor is desired and has a spacing 1 x lambda away where no transistor is desired
+4. Polysilicon and contacts have a spacing of 3 x lambda  from other polysilicon or contacts.
+5. N-well surrounds pMOS transistors by 6 x lambda and avoids nMOS transistors by 6 x lambda.
+
+
+## Magic Syntax

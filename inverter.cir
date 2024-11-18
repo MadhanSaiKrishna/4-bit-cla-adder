@@ -1,8 +1,5 @@
-.subckt inverter y x vdd gnd width_P=40*LAMBDA
-+width_N=20*LAMBDA
-
-.param width_P=40*LAMBDA
-.param width_N=20*LAMBDA
+.subckt inverter y x vdd gnd width_P='a'
++width_N='b'
 
 M1 y x gnd gnd CMOSN W={width_N} L={2*LAMBDA} 
 + AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
