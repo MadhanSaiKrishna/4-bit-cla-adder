@@ -1,5 +1,5 @@
-## Major Problems
-1. Load driving issue which connecting my carry out with a d flip flop
+## Major Problems to solve
+1. Load driving issue while connecting my carry out with a d flip flop
 
 ## To Do List
 
@@ -11,6 +11,7 @@
 consumption
 - [ ] Task 6: Calculate the propogation delay of the combinational circuit between the flip flops independently without these flip flops.
 - [ ] Task 7: Find the setup time and hold time of the d flip flops i've used.
+- [ ] Task 8: magic layout of the circuit
 
 ## Tips
 - While designing the cmos inverters, overshoots can be observed in the output when the input transition from high to low or low to high.  This might be due to rapid change in the input and there is no load capacitance to stabilize the output. You can model the parasitic capacitance at the output node with a small capacitance in the spice to avoid this. (`Note`: This is for pre layout simulations)
@@ -75,11 +76,13 @@ width_N = 20 x lambda = 1.8u
 width_P = 40 x lambda = 3.6u
 
 ## Design Rules
-1. Metal and diffusion have minimum width and spacing of 4 x lambda
+1. Metal and diffusion have minimum `width` and `spacing` of 4 x lambda
 2. Polysilicon uses a width of 2 x lambda
 3. Polysilicon overlaps diffusion by 2 x lambda where a transistor is desired and has a spacing 1 x lambda away where no transistor is desired
 4. Polysilicon and contacts have a spacing of 3 x lambda  from other polysilicon or contacts.
 5. N-well surrounds pMOS transistors by 6 x lambda and avoids nMOS transistors by 6 x lambda.
+6. length of ndiffusion and pdiffusion 12 x lambda  
+
 
 
 ## Magic Syntax
