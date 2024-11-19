@@ -16,6 +16,7 @@ consumption
 ## Tips
 - While designing the cmos inverters, overshoots can be observed in the output when the input transition from high to low or low to high.  This might be due to rapid change in the input and there is no load capacitance to stabilize the output. You can model the parasitic capacitance at the output node with a small capacitance in the spice to avoid this. (`Note`: This is for pre layout simulations)
 - Drain and Source nodes in mosfets can be interchanged due to the symmetry of mosfet.
+- For a static cmos design, which has a boolean expression for pun and pdn, layout can easily be drawn using euler's graph method.
 
 ## Doubts
 - My CMOS static XOR gate designed intially for three inputs didn't work out. Why?
