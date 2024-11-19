@@ -12,16 +12,16 @@
 .global gnd vdd
 Vdd vdd gnd 'SUPPLY'
 
-V1 A0_in gnd pulse 0 1.8 0u 10p 10p 1u 3u
-V2 B0_in gnd pulse 0 1.8 0.1u 10p 10p 1u 3u
-V3 A1_in gnd pulse 0 1.8 0.5u 10p 10p 1u 3u
-V4 B1_in gnd pulse 0 1.8 0u 10p 10p 1u 3u
-V5 A2_in gnd pulse 0 1.8 0.5u 10p 10p 1u 3u
-V6 B2_in gnd pulse 0 1.8 0u 10p 10p 1u 3u
-V7 A3_in gnd pulse 0 1.8 0u 10p 10p 1u 3u
-V8 B3_in gnd pulse 0 1.8 2u 10p 10p 1u 3u
+V1 A0_in gnd pulse 0 1.8 0u 10p 10p 0.1u 0.3u
+V2 B0_in gnd pulse 0 1.8 0.3u 10p 10p 0.1u 0.3u
+V3 A1_in gnd pulse 0 1.8 0.5u 10p 10p 0.1u 0.3u
+V4 B1_in gnd pulse 0 1.8 0u 10p 10p 0.1u 0.3u
+V5 A2_in gnd pulse 0 1.8 0.5u 10p 10p 0.1u 0.3u
+V6 B2_in gnd pulse 0 1.8 0u 10p 10p 0.1u 0.3u
+V7 A3_in gnd pulse 0 1.8 0u 10p 10p 0.1u 0.3u
+V8 B3_in gnd pulse 0 1.8 2u 10p 10p 0.1u 0.3u
 
-V9 clk gnd pulse 0 1.8 10n 10p 10p 1u 2u
+V9 clk gnd pulse 0 1.8 100n 10p 10p 0.5u 1u
 
 
 V10 Cin gnd dc 0
@@ -39,6 +39,8 @@ X1 A0_in A0 clk vdd gnd dff
 X2 B0_in B0 clk vdd gnd dff
 
 X3 C1 A0 B0 Cin vdd gnd carry_one
+* Xinv1 C1_dup_inv C1_dup vdd gnd inverter width_P=20*LAMBDA width_N=10*LAMBDA
+* Xinv2 C1 C1_dup_inv vdd gnd inverter width_P=20*LAMBDA width_N=10*LAMBDA
 
 *Carry 2 Test
 X4 A1_in A1 clk vdd gnd dff
@@ -54,7 +56,11 @@ X9 C3 A2 B2 A1 B1 A0 B0 Cin vdd gnd carry_three
 X10 A3_in A3 clk vdd gnd dff
 X11 B3_in B3 clk vdd gnd dff
 
-X12 Cout A3 B3 A2 B2 A1 B1 A0 B0 Cin vdd gnd carry_out
+X12 Cout_dup A3 B3 A2 B2 A1 B1 A0 B0 Cin vdd gnd carry_out
+* X30 Cout_dup_1 Cout_dup_2 vdd gnd inverter width_P=40*LAMBDA width_N=20*LAMBDA
+* X31 Cout Cout_dup_1 vdd gnd inverter width_P=80*LAMBDA width_N=40*LAMBDA
+
+X30 Cout_dup gnd cout vdd gnd two_xor
 
 X13 A0 B0 p0 vdd gnd two_xor
 X14 p0 Cin S0_out vdd gnd two_xor
@@ -79,11 +85,16 @@ X26 S1_inv S1 vdd gnd inverter width_P = 20*LAMBDA width_N=10*LAMBDA
 X27 S2_inv S2 vdd gnd inverter width_P = 20*LAMBDA width_N=10*LAMBDA
 X28 S3_inv S3 vdd gnd inverter width_P = 20*LAMBDA width_N=10*LAMBDA
 
-.tran 0.1u 10u
 
-.measure tran tpcq trig v(clk) val=0.9 td=0 rise=3 targ v(a2) val=0.9 td=0 rise = 1
-.measure tran tpd trig v(a2) val=0.9 td=0 rise = 1  targ v(s2_out) val=0.9 td=0 rise = 2
-.measure tran tpcq trig v(clk) val=0.9 td=0 rise = 3  targ v(s2) val=0.9 td=0 fall = 1
+* E1 cout_buff cout gnd value = {V(cout)}
+
+X29 Cout_out cout clk vdd gnd dff
+
+.tran 10n 10u
+
+* .measure tran tpcq trig v(clk) val=0.9 td=0 rise=3 targ v(a2) val=0.9 td=0 rise = 1
+* .measure tran tpd trig v(a2) val=0.9 td=0 rise = 1  targ v(s2_out) val=0.9 td=0 rise = 2
+* .measure tran tpcq trig v(clk) val=0.9 td=0 rise = 3  targ v(s2) val=0.9 td=0 fall = 1
 
 .control
 run
@@ -92,6 +103,10 @@ set hcopypscolor = 1
 set color0 = white
 *Grid and text color
 set color1 = black
-plot V(clk) V(a2)+2 V(s2_out)+4 V(s2)+6
-plot V(clk) V(a3_in)+2 V(b3_in)+4 V(c3)+6 V(s3)+8 V(cout)+10
+* plot V(clk) V(a2)+2 V(s2_out)+4 V(s2)+6
+* plot V(a3) V(b3)+2 V(C3)+4 V(cout)+6 
+* plot V(clk) V(A0_in)+2 V(A0)+4 V(B0_in)+6 V(B0)+8 
+* plot V(clk) V(A3)+2 V(B3)+4 V(c3)+6 V(S3)+8 V(cout)+10
+plot V(clk) V(Cout_dup)+2 V(cout)+4
+* plot v(clk) v(s1_out)+2 v(s1)+4
 .endc
