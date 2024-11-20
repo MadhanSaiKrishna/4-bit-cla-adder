@@ -1,0 +1,104 @@
+.include TSMC_180nm.txt
+Vdd vdd gnd 1.8V
+
+Va1 a0 gnd pulse 0 1.8 0n 0 0 2n 4n
+Vb1 b0 gnd pulse 0 1.8 0n 0 0 4n 8n  
+Vcin cin gnd pulse 0 1.8 0n 0 0 2n 4n
+
+.option scale=0.01u
+
+M1000 a_13_n59# b0 a_6_n59# Gnd CMOSN w=180 l=18
++  ad=16200 pd=540 as=24300 ps=1350
+M1001 a_6_n59# b0 a_37_n59# Gnd CMOSN w=180 l=18
++  ad=0 pd=0 as=24300 ps=990
+M1002 gnd a0 a_13_n59# Gnd CMOSN w=180 l=18
++  ad=32400 pd=1440 as=0 ps=0
+M1003 C1_bar a_6_n59# vdd w_105_n29# CMOSP w=360 l=18
++  ad=16200 pd=810 as=64800 ps=2520
+M1004 a_13_5# b0 a_6_n59# w_0_n1# CMOSP w=360 l=18
++  ad=32400 pd=900 as=48600 ps=2430
+M1005 C1 C1_bar vdd w_140_n29# CMOSP w=360 l=18
++  ad=16200 pd=810 as=0 ps=0
+M1006 a_37_n59# cin gnd Gnd CMOSN w=180 l=18
++  ad=0 pd=0 as=0 ps=0
+M1007 vdd a0 a_13_5# w_0_n1# CMOSP w=360 l=18
++  ad=0 pd=0 as=0 ps=0
+M1008 a_6_n59# b0 a_37_5# w_72_n1# CMOSP w=360 l=18
++  ad=0 pd=0 as=48600 ps=1710
+M1009 C1_bar a_6_n59# gnd Gnd CMOSN w=180 l=18
++  ad=8100 pd=450 as=0 ps=0
+M1010 a_37_5# cin vdd w_0_n1# CMOSP w=360 l=18
++  ad=0 pd=0 as=0 ps=0
+M1011 a_6_n59# a0 a_37_n59# Gnd CMOSN w=180 l=18
++  ad=0 pd=0 as=0 ps=0
+M1012 C1 C1_bar gnd Gnd CMOSN w=180 l=18
++  ad=8100 pd=450 as=0 ps=0
+M1013 a_6_n59# a0 a_37_5# w_0_n1# CMOSP w=360 l=18
++  ad=0 pd=0 as=0 ps=0
+C0 a_13_5# vdd 0.41fF
+C1 a_6_n59# a_37_5# 1.06fF
+C2 b0 a_6_n59# 0.01fF
+C3 C1 gnd 0.25fF
+C4 w_105_n29# vdd 0.11fF
+C5 w_140_n29# C1_bar 0.08fF
+C6 w_72_n1# a_37_5# 0.06fF
+C7 w_72_n1# b0 0.10fF
+C8 w_0_n1# a_6_n59# 0.33fF
+C9 a_37_n59# a_6_n59# 0.64fF
+C10 w_0_n1# cin 0.10fF
+C11 C1_bar vdd 0.46fF
+C12 a_6_n59# vdd 0.02fF
+C13 a_6_n59# a_13_5# 0.49fF
+C14 w_140_n29# C1 0.06fF
+C15 a_37_n59# gnd 0.21fF
+C16 a0 a_6_n59# 0.01fF
+C17 w_105_n29# C1_bar 0.06fF
+C18 w_0_n1# a_37_5# 0.03fF
+C19 w_105_n29# a_6_n59# 0.08fF
+C20 C1 vdd 0.44fF
+C21 w_0_n1# b0 0.10fF
+C22 a_13_n59# a_6_n59# 0.25fF
+C23 a_37_5# vdd 0.41fF
+C24 a_6_n59# C1_bar 0.05fF
+C25 a0 a_37_5# 0.08fF
+C26 a_13_n59# gnd 0.21fF
+C27 cin a_6_n59# 0.00fF
+C28 w_140_n29# vdd 0.11fF
+C29 w_0_n1# vdd 0.03fF
+C30 gnd C1_bar 0.36fF
+C31 w_0_n1# a_13_5# 0.03fF
+C32 w_72_n1# a_6_n59# 0.06fF
+C33 gnd a_6_n59# 0.11fF
+C34 C1 C1_bar 0.05fF
+C35 w_0_n1# a0 0.21fF
+C36 gnd Gnd 0.27fF
+C37 a_37_n59# Gnd 0.24fF
+C38 a_13_n59# Gnd 0.04fF
+C39 C1 Gnd 0.08fF
+C40 vdd Gnd 0.10fF
+C41 C1_bar Gnd 0.22fF
+C42 a_37_5# Gnd 0.15fF
+C43 a_13_5# Gnd 0.02fF
+C44 a_6_n59# Gnd 2.93fF
+C45 b0 Gnd 0.58fF
+C46 a0 Gnd 0.63fF
+C47 cin Gnd 0.33fF
+C48 w_140_n29# Gnd 1.35fF
+C49 w_105_n29# Gnd 1.35fF
+C50 w_72_n1# Gnd 1.38fF
+C51 w_0_n1# Gnd 3.51fF
+
+
+.tran 0.1n 20n
+
+.control
+set hcopypscolor = 1 
+set color0=white
+set color1=black
+run
+
+plot 4+v(a0) 2+v(b0) v(cin)+6 V(c1_bar)
+
+
+.endc
+.end

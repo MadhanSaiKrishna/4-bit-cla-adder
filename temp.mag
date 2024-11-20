@@ -1,10 +1,11 @@
 magic
 tech scmos
-timestamp 1732080521
+timestamp 1732094369
 << nwell >>
 rect 0 -1 66 52
 rect 72 -1 98 52
-rect 105 -29 129 23
+rect 105 -29 129 27
+rect 140 -29 164 27
 << ntransistor >>
 rect 11 -59 13 -39
 rect 23 -59 25 -39
@@ -12,6 +13,7 @@ rect 35 -59 37 -39
 rect 47 -59 49 -39
 rect 84 -59 86 -39
 rect 116 -60 118 -40
+rect 151 -60 153 -40
 << ptransistor >>
 rect 11 5 13 45
 rect 23 5 25 45
@@ -19,6 +21,7 @@ rect 35 5 37 45
 rect 47 5 49 45
 rect 84 5 86 45
 rect 116 -23 118 17
+rect 151 -23 153 17
 << ndiffusion >>
 rect 10 -59 11 -39
 rect 13 -59 14 -39
@@ -32,6 +35,8 @@ rect 83 -59 84 -39
 rect 86 -59 87 -39
 rect 115 -60 116 -40
 rect 118 -60 119 -40
+rect 150 -60 151 -40
+rect 153 -60 154 -40
 << pdiffusion >>
 rect 10 5 11 45
 rect 13 5 14 45
@@ -45,6 +50,8 @@ rect 83 5 84 45
 rect 86 5 87 45
 rect 115 -23 116 17
 rect 118 -23 119 17
+rect 150 -23 151 17
+rect 153 -23 154 17
 << ndcontact >>
 rect 6 -59 10 -39
 rect 14 -59 22 -39
@@ -55,6 +62,8 @@ rect 79 -59 83 -39
 rect 87 -59 91 -39
 rect 111 -60 115 -40
 rect 119 -60 123 -40
+rect 146 -60 150 -40
+rect 154 -60 158 -40
 << pdcontact >>
 rect 6 5 10 45
 rect 14 5 22 45
@@ -65,20 +74,8 @@ rect 79 5 83 45
 rect 87 5 91 45
 rect 111 -23 115 17
 rect 119 -23 123 17
-<< psubstratepcontact >>
-rect 16 -71 20 -66
-rect 28 -68 32 -63
-rect 40 -71 44 -66
-rect 79 -73 83 -67
-rect 111 -68 115 -64
-rect 119 -68 123 -64
-<< nsubstratencontact >>
-rect 111 23 115 27
-rect 119 23 123 27
-rect 16 -10 20 -6
-rect 28 -8 32 -4
-rect 40 -8 44 -3
-rect 77 -8 83 -4
+rect 146 -23 150 17
+rect 154 -23 158 17
 << polysilicon >>
 rect 11 45 13 48
 rect 23 45 25 48
@@ -86,18 +83,21 @@ rect 35 45 37 48
 rect 47 45 49 48
 rect 84 45 86 48
 rect 116 17 118 23
+rect 151 17 153 23
 rect 11 -39 13 5
 rect 23 -39 25 5
 rect 35 -39 37 5
 rect 47 -39 49 5
 rect 84 -39 86 5
 rect 116 -40 118 -23
+rect 151 -40 153 -23
 rect 11 -64 13 -59
 rect 23 -64 25 -59
 rect 35 -63 37 -59
 rect 47 -63 49 -59
 rect 84 -63 86 -59
 rect 116 -64 118 -60
+rect 151 -64 153 -60
 << polycontact >>
 rect 10 48 14 52
 rect 22 48 26 52
@@ -105,6 +105,7 @@ rect 34 48 38 52
 rect 46 48 50 52
 rect 83 48 87 52
 rect 111 -36 116 -32
+rect 146 -36 151 -32
 << metal1 >>
 rect 10 52 14 58
 rect 22 52 26 62
@@ -114,63 +115,61 @@ rect 83 52 87 58
 rect 54 10 59 14
 rect 6 -14 10 5
 rect 16 -6 20 5
-rect 28 -4 32 5
-rect 40 -3 43 5
+rect 28 -11 32 5
+rect 40 -4 43 5
 rect 80 -4 83 5
-rect 44 -8 77 -4
-rect 105 23 111 27
-rect 115 23 119 27
-rect 123 23 129 27
-rect 28 -11 32 -8
+rect 40 -8 83 -4
+rect 105 23 129 27
+rect 140 23 164 27
 rect 6 -39 10 -19
 rect 87 -15 91 5
 rect 111 17 115 23
+rect 146 17 150 23
 rect 87 -32 91 -20
 rect 119 -32 123 -23
+rect 154 -32 158 -23
 rect 87 -36 111 -32
-rect 119 -36 139 -32
+rect 119 -36 146 -32
+rect 154 -36 174 -32
 rect 87 -39 91 -36
 rect 54 -52 58 -48
 rect 6 -79 10 -59
 rect 16 -66 20 -59
-rect 28 -63 32 -59
-rect 28 -73 32 -68
-rect 40 -66 44 -59
-rect 79 -67 83 -59
-rect 44 -71 79 -69
-rect 40 -73 79 -71
+rect 28 -73 32 -59
+rect 40 -69 44 -59
+rect 79 -69 83 -59
+rect 40 -73 83 -69
 rect 119 -40 123 -36
-rect 87 -78 91 -59
+rect 154 -40 158 -36
+rect 87 -79 91 -59
 rect 111 -64 116 -60
-rect 105 -68 111 -64
-rect 115 -68 119 -64
-rect 123 -68 129 -64
-<< m2contact >>
-rect 59 10 65 15
-rect 4 -19 10 -14
-rect 87 -20 93 -15
-rect 58 -53 63 -46
-rect 6 -85 11 -79
-rect 86 -85 93 -78
+rect 146 -64 151 -60
+rect 105 -68 129 -64
+rect 140 -68 164 -64
 << metal2 >>
 rect 59 -16 64 10
 rect 10 -19 87 -16
 rect 58 -80 62 -53
 rect 11 -84 86 -80
+<< m123contact >>
+rect 59 10 64 15
+rect 5 -19 10 -14
+rect 87 -20 92 -15
+rect 58 -53 63 -48
+rect 6 -84 11 -79
+rect 86 -84 91 -79
 << labels >>
 rlabel metal1 30 -70 30 -70 1 gnd
 rlabel metal1 116 25 116 25 5 vdd
 rlabel metal1 116 -66 116 -66 1 gnd
 rlabel metal1 30 -9 30 -9 1 vdd
-rlabel metal1 132 -34 132 -34 1 c1
-rlabel metal1 100 -34 100 -34 1 n010
-rlabel metal1 7 -21 7 -21 1 n010
-rlabel nsubstratencontact 43 -6 43 -6 1 n003
-rlabel metal2 64 -18 64 -18 1 n010
-rlabel metal2 61 -82 61 -82 1 n010
 rlabel metal1 12 54 12 54 1 b0
 rlabel metal1 25 54 25 54 1 a0
 rlabel metal1 36 54 36 54 1 cin
 rlabel metal1 48 54 48 54 1 a0
 rlabel metal1 86 54 86 54 1 b0
+rlabel metal1 151 25 151 25 5 vdd
+rlabel metal1 151 -66 151 -66 1 gnd
+rlabel metal1 135 -34 135 -34 1 C1_bar
+rlabel metal1 171 -34 171 -34 7 C1
 << end >>

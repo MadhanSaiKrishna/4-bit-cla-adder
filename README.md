@@ -1,5 +1,6 @@
-## Major Problems to solve
+## Major Issues
 1. Load driving issue while connecting my carry out with a d flip flop
+2. In the layout, substrate connections are not given.
 
 ## To Do List
 
@@ -12,11 +13,15 @@ consumption
 - [ ] Task 6: Calculate the propogation delay of the combinational circuit between the flip flops independently without these flip flops.
 - [ ] Task 7: Find the setup time and hold time of the d flip flops i've used.
 - [ ] Task 8: magic layout of the circuit
+- [ ] Task 9: Post layout simulations
+- [ ] Task 10: Verilog code
+- [ ] Task 11: In the spice netlist connect both source and body together.
 
 ## Tips
 - While designing the cmos inverters, overshoots can be observed in the output when the input transition from high to low or low to high.  This might be due to rapid change in the input and there is no load capacitance to stabilize the output. You can model the parasitic capacitance at the output node with a small capacitance in the spice to avoid this. (`Note`: This is for pre layout simulations)
 - Drain and Source nodes in mosfets can be interchanged due to the symmetry of mosfet.
 - For a static cmos design, which has a boolean expression for pun and pdn, layout can easily be drawn using euler's graph method.
+- Do not use Metal 2 for polysilicon contacts, we can only use m1.
 
 ## Doubts
 - My CMOS static XOR gate designed intially for three inputs didn't work out. Why?

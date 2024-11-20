@@ -51,6 +51,9 @@
 * +AS={5*width_N*LAMBDA} PS={10*LAMBDA+width_N}
 * +AD={5*width_N*LAMBDA} PD={10*LAMBDA+width_N}
 
+*CMOSN -> d g s b
+*CMOSP -> s g d b
+
 M1 N015 A0 0 N016 CMOSN W={2*width_N} L={2*LAMBDA}
 +AS={5*2*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
 +AD={5*2*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}

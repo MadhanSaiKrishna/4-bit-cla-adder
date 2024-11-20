@@ -1,4 +1,4 @@
-// Behavioral Code
+// Behavioral Code for reference 
 `timescale 1ns/1ps
 
 module adder(A,B,Cout,sum,Cin);
@@ -30,7 +30,7 @@ assign C4 = (P3 & P2 & P1 & P0& C0) | (P3 & P2 & P1 & G0) | (P3 & P2 & G1) | (P3
 
 assign Cout = C4;
 
-assign sum[0] = P0;
+assign sum[0] = P0^C0;
 assign sum[1] = P1 ^ C1;
 assign sum[2] = P2 ^ C2;
 assign sum[3] = P3 ^ C3;
