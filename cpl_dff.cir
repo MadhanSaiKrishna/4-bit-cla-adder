@@ -1,0 +1,6 @@
+.subckt cpl_dff b_in b clk vdd gnd
+
+.param width_P = 40*LAMBDA
+.param width_N = 20*LAMBDA
+
+.ends cpl_dff
