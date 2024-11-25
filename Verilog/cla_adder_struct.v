@@ -147,4 +147,9 @@ initial begin
     #160;
     $finish;
 end
+
+initial begin
+    $dumpfile("cla_adder.vcd");
+    $dumpvars(0,tb);
+end
 endmodule

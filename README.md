@@ -14,7 +14,7 @@ consumption
 - [ ] Task 7: Find the setup time and hold time of the d flip flops i've used.
 - [ ] Task 8: magic layout of the circuit
 - [ ] Task 9: Post layout simulations
-- [ ] Task 10: Verilog code
+- [x] Task 10: Verilog code
 - [ ] Task 11: In the spice netlist connect both source and body together.
 - [ ] Task 12: Make a new d flip flop using cpl logic
 
