@@ -7,6 +7,7 @@
 .include carry_three.cir
 .include carry_out.cir
 .include two_input_xor.cir
+.include cpl_dff.cir
 .param SUPPLY=1.8
 .param LAMBDA=0.09u
 .global gnd vdd
@@ -21,7 +22,7 @@ V6 B2_in gnd pulse 0 1.8 0u 10p 10p 0.1u 0.3u
 V7 A3_in gnd pulse 0 1.8 0u 10p 10p 0.1u 0.3u
 V8 B3_in gnd pulse 0 1.8 2u 10p 10p 0.1u 0.3u
 
-V9 clk gnd pulse 0 1.8 100n 10p 10p 0.1u 0.3u
+V9 clk gnd pulse 0 1.8 0.03u 10p 10p 0.05u 0.1u
 
 
 V10 Cin gnd dc 0
@@ -110,7 +111,8 @@ set color0 = white
 set color1 = black
 * plot V(clk) V(a2)+2 V(s2_out)+4 V(s2)+6
 * plot V(a3) V(b3)+2 V(C3)+4 V(cout)+6 
-plot V(clk) V(A1_in)+2 V(A1)+4 V(B1_in)+6 V(B1)+8 
+plot V(a0_in) V(a0)+2 V(clk)+4
+* plot V(clk) V(A1_in)+2 V(A1)+4 V(B1_in)+6 V(B1)+8 
 * plot V(clk) V(A3)+2 V(B3)+4 V(c3)+6 V(S3)+8 V(cout)+10
 * plot v(clk) v(s1_out)+2 v(s1)+4
 * plot V(a3) V(b3)+2 V(c3)+4 V(cout)+6 

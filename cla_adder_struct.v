@@ -85,53 +85,24 @@ module adder(A_in, B_in, Cin, sum, Cout,clk);
     and g16(p2g1,P2, G1);
     or g17(C3, p2p1p0c0, p2p1g0, p2g1, G2);
 
+    wire Cout_out;
+    wire [3:0]sum_out;
+
     and g18(p3p2p1p0c0, P3, P2, P1, P0, Cin);
     and g19(p3p2p1g0, P3, P2, P1, G0);
     and g20(p3p2g1, P3, P2, G1);
     and g21(p3g2, P3, G2);
-    or g22(Cout, p3p2p1p0c0, p3p2p1g0, p3p2g1, p3g2, G3);
+    or g22(Cout_out, p3p2p1p0c0, p3p2p1g0, p3p2g1, p3g2, G3);
 
-    my_xor g23(P0, Cin, sum[0]);
-    my_xor g24(P1, C1, sum[1]);
-    my_xor g25(P2, C2, sum[2]);
-    my_xor g26(P3, C3, sum[3]);
+    my_xor g23(P0, Cin, sum_out[0]);
+    my_xor g24(P1, C1, sum_out[1]);
+    my_xor g25(P2, C2, sum_out[2]);
+    my_xor g26(P3, C3, sum_out[3]);
 
-endmodule
+    dff ff9(clk,sum_out[0],sum[0]);
+    dff ff10(clk,sum_out[1],sum[1]);
+    dff ff11(clk,sum_out[2],sum[2]);
+    dff ff12(clk,sum_out[3],sum[3]);
+    dff ff13(clk, Cout_out,Cout);
 
-module tb();
-reg [3:0]A,B;
-reg clk;
-reg Cin;
-wire [3:0]sum;
-wire Cout;
-
-// Generate clk
-initial begin
-    clk = 0;
-    forever #5 clk = ~clk;
-end
-
-// Initial values
-initial begin
-    A = 4'b0000;
-    B = 4'b0000;
-    Cin = 0;
-end
-
-// DUT instantiation
-adder dut(.A_in(A), .B_in(B), .Cin(Cin), .sum(sum), .Cout(Cout), .clk(clk));
-
-// Testcases
-
-initial begin
-    // Monitoring the values
-    $monitor("Time: %t | A: %b | B: %b | Cin : %b |Sum: %b | Cout: %b", $time, A, B,Cin, sum, Cout);
-
-    #10 A = 4'b0000; B = 4'b0010; Cin = 0; // Test case 1
-    #10 A = 4'b0010; B = 4'b0100; Cin = 1; // Test case 2
-    #10 A = 4'b1111; B = 4'b0001; Cin = 0; // Test case for overflow
-    #10 A = 4'b0111; B = 4'b0001; Cin = 1;
-
-    #50 $finish;
-end
 endmodule
