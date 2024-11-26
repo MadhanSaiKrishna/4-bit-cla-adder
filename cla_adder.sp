@@ -111,11 +111,12 @@ set color0 = white
 set color1 = black
 * plot V(clk) V(a2)+2 V(s2_out)+4 V(s2)+6
 * plot V(a3) V(b3)+2 V(C3)+4 V(cout)+6 
-plot V(a0_in) V(a0)+2 V(clk)+4
+* plot V(a0_in) V(a0)+2 V(clk)+4
 * plot V(clk) V(A1_in)+2 V(A1)+4 V(B1_in)+6 V(B1)+8 
 * plot V(clk) V(A3)+2 V(B3)+4 V(c3)+6 V(S3)+8 V(cout)+10
 * plot v(clk) v(s1_out)+2 v(s1)+4
 * plot V(a3) V(b3)+2 V(c3)+4 V(cout)+6 
 * plot V(cout_dup_inv) V(cout_dup)+2 V(Cout)+4
 * V(cout_out)+4
+plot V(clk) V(cout)+2 V(cout_out)+4
 .endc

@@ -2,7 +2,11 @@
 .include TSMC_180nm.txt
 
 .option scale=0.09u
-Va_in a_in gnd pulse 0 1.8 5 0 20n 40n
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.global gnd vdd
+Vdd vdd gnd 'SUPPLY'
+Va_in a_in gnd pulse 0 1.8 0 10p 10p 200n 400n
 V2 clk gnd pulse 0 1.8 0n 0 0 40n 80n  
 
 M1000 gnd a_n362_n40# a_n309_n40# Gnd CMOSN w=40 l=2
@@ -81,7 +85,7 @@ C50 w_n324_35# Gnd 2.53fF
 C51 w_n370_35# Gnd 2.53fF
 C52 w_n420_33# Gnd 3.68fF
 
-.tran 0.1n 200n
+.tran 0.1n 1u
 
 .control
 set hcopypscolor = 1 
