@@ -18,6 +18,8 @@ consumption
 - [ ] Task 11: In the spice netlist connect both source and body together.
 - [ ] Task 12: Make a new d flip flop using cpl logic
 - [ ] Task 13: Verify if my inv magic file is working properly post layout.
+- [ ] Task 14: Check each node in the carry_out to find the bug.
+
 
 ## Tips
 - While designing the cmos inverters, overshoots can be observed in the output when the input transition from high to low or low to high.  This might be due to rapid change in the input and there is no load capacitance to stabilize the output. You can model the parasitic capacitance at the output node with a small capacitance in the spice to avoid this. (`Note`: This is for pre layout simulations)
