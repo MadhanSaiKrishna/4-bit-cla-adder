@@ -1,6 +1,5 @@
 ## Major Issues
-1. Load driving issue while connecting my carry out with a d flip flop
-2. In the layout, substrate connections are not given.
+1. In the layout, substrate connections are not given.
 
 ## To Do List
 
@@ -52,6 +51,8 @@ For A2
 1. In the carry circuit, i've considered equal sizing for all the mosfets in PDN and PUN to make the layout symmetric and easier.  
 Sizing the mosfets in PDN and PUN of the carry circuits will help in reducing the delay and can drive larger loads.
 
+2. The sizing of TSPC dff in cout_new cir is different than the individual dff module, in cout_new all the pmos have identical sizing and nmos have identical sizing.
+
 # NGSpice Syntax
 
 `PULSE(V1 V2 TD TR TF PW PER NP)`
@@ -96,3 +97,4 @@ width_P = 40 x lambda = 3.6u
 
 
 ## Magic Syntax
+

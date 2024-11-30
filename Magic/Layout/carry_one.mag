@@ -1,6 +1,6 @@
 magic
 tech scmos
-timestamp 1732080521
+timestamp 1732985858
 << nwell >>
 rect 0 -1 66 52
 rect 72 -1 98 52
@@ -65,20 +65,6 @@ rect 79 5 83 45
 rect 87 5 91 45
 rect 111 -23 115 17
 rect 119 -23 123 17
-<< psubstratepcontact >>
-rect 16 -71 20 -66
-rect 28 -68 32 -63
-rect 40 -71 44 -66
-rect 79 -73 83 -67
-rect 111 -68 115 -64
-rect 119 -68 123 -64
-<< nsubstratencontact >>
-rect 111 23 115 27
-rect 119 23 123 27
-rect 16 -10 20 -6
-rect 28 -8 32 -4
-rect 40 -8 44 -3
-rect 77 -8 83 -4
 << polysilicon >>
 rect 11 45 13 48
 rect 23 45 25 48
@@ -114,14 +100,11 @@ rect 83 52 87 58
 rect 54 10 59 14
 rect 6 -14 10 5
 rect 16 -6 20 5
-rect 28 -4 32 5
-rect 40 -3 43 5
+rect 28 -11 32 5
+rect 40 -4 43 5
 rect 80 -4 83 5
-rect 44 -8 77 -4
-rect 105 23 111 27
-rect 115 23 119 27
-rect 123 23 129 27
-rect 28 -11 32 -8
+rect 40 -8 83 -4
+rect 105 23 129 27
 rect 6 -39 10 -19
 rect 87 -15 91 5
 rect 111 17 115 23
@@ -132,19 +115,15 @@ rect 119 -36 139 -32
 rect 87 -39 91 -36
 rect 54 -52 58 -48
 rect 6 -79 10 -59
-rect 16 -66 20 -59
-rect 28 -63 32 -59
-rect 28 -73 32 -68
-rect 40 -66 44 -59
-rect 79 -67 83 -59
-rect 44 -71 79 -69
-rect 40 -73 79 -71
+rect 16 -65 20 -59
+rect 28 -73 32 -59
+rect 40 -69 44 -59
+rect 79 -69 83 -59
+rect 40 -73 83 -69
 rect 119 -40 123 -36
 rect 87 -78 91 -59
 rect 111 -64 116 -60
-rect 105 -68 111 -64
-rect 115 -68 119 -64
-rect 123 -68 129 -64
+rect 105 -68 129 -64
 << m2contact >>
 rect 59 10 65 15
 rect 4 -19 10 -14
@@ -165,7 +144,6 @@ rlabel metal1 30 -9 30 -9 1 vdd
 rlabel metal1 132 -34 132 -34 1 c1
 rlabel metal1 100 -34 100 -34 1 n010
 rlabel metal1 7 -21 7 -21 1 n010
-rlabel nsubstratencontact 43 -6 43 -6 1 n003
 rlabel metal2 64 -18 64 -18 1 n010
 rlabel metal2 61 -82 61 -82 1 n010
 rlabel metal1 12 54 12 54 1 b0
