@@ -1,0 +1,109 @@
+* SPICE3 file created from two_inp_xor.ext - technology: scmos
+.include TSMC_180nm.txt
+.option scale=0.09u
+
+.param SUPPLY=1.8
+.param LAMBDA=0.09u
+.global gnd vdd
+Vdd vdd gnd 'SUPPLY'
+V1 a0 gnd pulse 0 1.8 0 10p 10p 200n 400n
+V2 b0 gnd pulse 0 1.8 0n 0 0 40n 80n  
+
+M1000 vdd a0 a_78_63# w_65_57# CMOSP w=80 l=2
++  ad=1200 pd=360 as=800 ps=180
+M1001 P0 a0_inv a_102_63# w_65_57# CMOSP w=80 l=2
++  ad=800 pd=340 as=800 ps=180
+M1002 a0_inv a0 gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=600 ps=200
+M1003 b0_inv b0 gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1004 b0_inv b0 vdd w_24_n11# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1005 a0_inv a0 vdd w_24_97# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1006 P0 b0 a_90_n42# Gnd CMOSN w=40 l=2
++  ad=400 pd=100 as=400 ps=100
+M1007 a_71_n42# a0_inv P0 Gnd CMOSN w=40 l=2
++  ad=400 pd=180 as=0 ps=0
+M1008 gnd b0_inv a_71_n42# Gnd CMOSN w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 a_90_n42# a0 gnd Gnd CMOSN w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 a_78_63# b0_inv P0 w_65_57# CMOSP w=80 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 a_102_63# b0 vdd w_65_57# CMOSP w=80 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 b0_inv w_24_n11# 0.06fF
+C1 w_24_n11# b0 0.08fF
+C2 b0_inv a0_inv 0.08fF
+C3 a0_inv b0 0.43fF
+C4 a_102_63# vdd 0.88fF
+C5 P0 a_90_n42# 0.41fF
+C6 a0_inv a0 0.41fF
+C7 w_65_57# a0_inv 0.07fF
+C8 b0_inv gnd 0.28fF
+C9 P0 a0_inv 0.11fF
+C10 a_71_n42# a_90_n42# 0.08fF
+C11 b0_inv vdd 0.44fF
+C12 b0 gnd 0.11fF
+C13 a_78_63# vdd 0.88fF
+C14 b0 vdd 0.02fF
+C15 a_71_n42# a0_inv 0.09fF
+C16 w_24_97# a0_inv 0.06fF
+C17 a0 gnd 0.11fF
+C18 vdd a0 0.02fF
+C19 w_65_57# vdd 0.09fF
+C20 P0 vdd 0.05fF
+C21 a_71_n42# gnd 0.54fF
+C22 b0_inv b0 0.55fF
+C23 w_24_97# vdd 0.08fF
+C24 w_65_57# a_102_63# 0.02fF
+C25 P0 a_102_63# 0.82fF
+C26 b0_inv a0 0.09fF
+C27 w_65_57# b0_inv 0.07fF
+C28 P0 b0_inv 0.09fF
+C29 b0 a0 0.09fF
+C30 w_65_57# b0 0.07fF
+C31 a_78_63# w_65_57# 0.02fF
+C32 P0 a_78_63# 0.82fF
+C33 P0 b0 0.09fF
+C34 a_71_n42# b0_inv 0.09fF
+C35 w_65_57# a0 0.07fF
+C36 a_71_n42# b0 0.09fF
+C37 P0 a0 0.26fF
+C38 a_90_n42# gnd 0.41fF
+C39 P0 w_65_57# 0.21fF
+C40 w_24_n11# vdd 0.08fF
+C41 a0_inv gnd 0.29fF
+C42 a_71_n42# a0 0.09fF
+C43 w_24_97# a0 0.08fF
+C44 a0_inv vdd 0.48fF
+C45 P0 a_71_n42# 1.20fF
+C46 a_90_n42# Gnd 0.02fF
+C47 a_71_n42# Gnd 0.26fF
+C48 gnd Gnd 0.13fF
+C49 vdd Gnd 0.28fF
+C50 a_102_63# Gnd 0.00fF
+C51 a_78_63# Gnd 0.00fF
+C52 P0 Gnd 0.71fF
+C53 a0_inv Gnd 0.05fF
+C54 b0 Gnd 0.16fF
+C55 b0_inv Gnd 0.10fF
+C56 a0 Gnd 0.12fF
+C57 w_24_n11# Gnd 1.25fF
+C58 w_65_57# Gnd 5.54fF
+C59 w_24_97# Gnd 1.25fF
+
+
+.tran 0.1n 1u
+
+.control
+set hcopypscolor = 1 
+set color0=white
+set color1=black
+run
+
+plot V(a0) V(b0)+2 V(p0)+4
+
+.endc
+.end
