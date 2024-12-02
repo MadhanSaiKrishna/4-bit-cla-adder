@@ -7,11 +7,11 @@
 .global gnd vdd
 Vdd vdd gnd 'SUPPLY'
 Va_in a_in gnd pulse 0 1.8 0 10p 10p 200n 400n
-V2 clk gnd pulse 0 1.8 0n 0 0 40n 80n  
+V2 clk gnd pulse 0 1.8 0n 0 0 40n 80n 
 
 M1000 gnd a_n362_n40# a_n309_n40# Gnd CMOSN w=40 l=2
 +  ad=700 pd=320 as=400 ps=100
-M1001 a_n406_n45# clk a_n406_41# w_n420_33# CMOSP w=80 l=2
+M1001 a_n406_n43# clk a_n406_41# w_n420_33# CMOSP w=80 l=2
 +  ad=400 pd=170 as=800 ps=180
 M1002 a_n316_n40# a_n362_n40# vdd w_n324_35# CMOSP w=80 l=2
 +  ad=400 pd=170 as=1400 ps=600
@@ -21,70 +21,67 @@ M1004 a_n362_n40# clk vdd w_n370_35# CMOSP w=80 l=2
 +  ad=400 pd=170 as=0 ps=0
 M1005 gnd clk a_n355_n40# Gnd CMOSN w=40 l=2
 +  ad=0 pd=0 as=400 ps=100
-M1006 a a_n316_n40# gnd Gnd CMOSN w=20 l=2
-+  ad=100 pd=50 as=0 ps=0
-M1007 a_n406_41# a_in vdd w_n420_33# CMOSP w=80 l=2
-+  ad=0 pd=0 as=0 ps=0
-M1008 a_n355_n40# a_n406_n45# a_n362_n40# Gnd CMOSN w=40 l=2
-+  ad=0 pd=0 as=200 ps=90
-M1009 a_n406_n45# a_in gnd Gnd CMOSN w=40 l=2
+M1006 a_n406_n43# a_in gnd Gnd CMOSN w=40 l=2
 +  ad=200 pd=90 as=0 ps=0
+M1007 a a_n316_n40# gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1008 a_n406_41# a_in vdd w_n420_33# CMOSP w=80 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 a_n355_n40# a_n406_n43# a_n362_n40# Gnd CMOSN w=40 l=2
++  ad=0 pd=0 as=200 ps=90
 M1010 a a_n316_n40# vdd w_n292_36# CMOSP w=40 l=2
 +  ad=200 pd=90 as=0 ps=0
-C0 a_n362_n40# vdd 0.85fF
-C1 a_n406_n45# w_n420_33# 0.11fF
-C2 a_n406_41# w_n420_33# 0.02fF
-C3 a_n309_n40# gnd 0.51fF
-C4 w_n324_35# a_n316_n40# 0.10fF
-C5 clk w_n420_33# 0.08fF
-C6 vdd w_n420_33# 0.20fF
-C7 w_n292_36# a_n316_n40# 0.08fF
-C8 a_n316_n40# a 0.05fF
-C9 gnd a_n316_n40# 0.11fF
-C10 a_n362_n40# a_n316_n40# 0.53fF
-C11 a_n406_n45# a_in 0.07fF
-C12 a_n362_n40# w_n370_35# 0.10fF
-C13 a_n362_n40# w_n324_35# 0.07fF
-C14 w_n292_36# a 0.06fF
-C15 clk a_n316_n40# 0.13fF
-C16 a_in gnd 0.02fF
-C17 a_n406_n45# a_n406_41# 0.82fF
-C18 clk w_n370_35# 0.07fF
-C19 vdd a_n316_n40# 0.88fF
-C20 gnd a 0.25fF
-C21 a_n406_n45# gnd 0.45fF
-C22 a_n406_n45# a_n362_n40# 0.13fF
-C23 vdd w_n370_35# 0.17fF
-C24 clk a_in 0.01fF
-C25 w_n324_35# vdd 0.17fF
-C26 a_n309_n40# a_n316_n40# 0.41fF
-C27 a_n362_n40# gnd 0.02fF
-C28 a_n406_n45# clk 0.70fF
-C29 w_n292_36# vdd 0.09fF
-C30 vdd a 0.44fF
-C31 a_n406_n45# vdd 0.03fF
-C32 gnd a_n355_n40# 0.51fF
-C33 a_n362_n40# a_n355_n40# 0.41fF
-C34 clk gnd 0.02fF
-C35 clk a_n362_n40# 0.88fF
-C36 a_n406_41# vdd 0.88fF
-C37 a_in w_n420_33# 0.08fF
-C38 gnd Gnd 0.34fF
-C39 a_n309_n40# Gnd 0.02fF
-C40 a_n355_n40# Gnd 0.02fF
-C41 a Gnd 0.06fF
-C42 vdd Gnd 0.45fF
-C43 a_n316_n40# Gnd 0.75fF
-C44 a_n406_n45# Gnd 0.42fF
-C45 a_n406_41# Gnd 0.00fF
-C46 a_n362_n40# Gnd 0.38fF
-C47 clk Gnd 0.98fF
-C48 a_in Gnd 0.28fF
-C49 w_n292_36# Gnd 1.46fF
-C50 w_n324_35# Gnd 2.53fF
-C51 w_n370_35# Gnd 2.53fF
-C52 w_n420_33# Gnd 3.68fF
-
+C0 a_n406_41# vdd 0.88fF
+C1 a_n406_n43# vdd 0.03fF
+C2 a_n406_n43# a_n406_41# 0.82fF
+C3 a w_n292_36# 0.06fF
+C4 w_n324_35# a_n362_n40# 0.07fF
+C5 w_n324_35# a_n316_n40# 0.10fF
+C6 clk a_n362_n40# 0.87fF
+C7 gnd a_n309_n40# 0.41fF
+C8 a gnd 0.21fF
+C9 a_n316_n40# clk 0.13fF
+C10 a_n355_n40# gnd 0.41fF
+C11 gnd a_in 0.02fF
+C12 a_n362_n40# vdd 0.85fF
+C13 a_n406_n43# a_n362_n40# 0.13fF
+C14 w_n420_33# clk 0.08fF
+C15 a_n316_n40# vdd 0.85fF
+C16 a_in clk 0.01fF
+C17 w_n420_33# vdd 0.20fF
+C18 a_n406_41# w_n420_33# 0.02fF
+C19 a_n406_n43# w_n420_33# 0.11fF
+C20 w_n370_35# clk 0.07fF
+C21 a vdd 0.41fF
+C22 a_n406_n43# a_in 0.07fF
+C23 a_n316_n40# a_n362_n40# 0.54fF
+C24 w_n370_35# vdd 0.17fF
+C25 w_n292_36# vdd 0.06fF
+C26 gnd a_n406_n43# 0.44fF
+C27 a_n355_n40# a_n362_n40# 0.41fF
+C28 a_n316_n40# a_n309_n40# 0.41fF
+C29 a a_n316_n40# 0.05fF
+C30 w_n324_35# vdd 0.17fF
+C31 w_n370_35# a_n362_n40# 0.10fF
+C32 a_n406_n43# clk 0.70fF
+C33 w_n292_36# a_n316_n40# 0.08fF
+C34 w_n420_33# a_in 0.08fF
+C35 gnd a_n316_n40# 0.10fF
+C36 a_n309_n40# Gnd 0.02fF
+C37 a_n355_n40# Gnd 0.02fF
+C38 gnd Gnd 0.17fF
+C39 a Gnd 0.11fF
+C40 a_n316_n40# Gnd 0.75fF
+C41 a_n406_n43# Gnd 0.18fF
+C42 a_n406_41# Gnd 0.00fF
+C43 vdd Gnd 0.55fF
+C44 a_n362_n40# Gnd 1.01fF
+C45 clk Gnd 0.09fF
+C46 a_in Gnd 0.28fF
+C47 w_n292_36# Gnd 1.46fF
+C48 w_n324_35# Gnd 2.53fF
+C49 w_n370_35# Gnd 2.53fF
+C50 w_n420_33# Gnd 3.68fF
 .tran 0.1n 1u
 
 .control
