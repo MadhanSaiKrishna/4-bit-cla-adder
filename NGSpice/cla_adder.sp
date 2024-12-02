@@ -8,7 +8,6 @@
 .include carry_out.cir
 .include cout_new.cir
 .include two_input_xor.cir
-.include cpl_dff.cir
 .param SUPPLY=1.8
 .param LAMBDA=0.09u
 .global gnd vdd
@@ -108,7 +107,7 @@ set color1 = black
 * plot V(clk) V(A1_in)+2 V(A1)+4 V(B1_in)+6 V(B1)+8 
 * plot V(clk) V(A3)+2 V(B3)+4 V(c3)+6 V(S3)+8 V(cout)+10
 * plot v(clk) v(s1_out)+2 v(s1)+4
-plot V(a3) V(b3)+2 V(c3)+4 V(cout)+6 V(clk)+8
+plot V(a0) V(b0)+2 V(cin)+4 V(a1)+6 V(b1)+8 V(c2)+10
 * +V(cout_out)+8 V(clk)+10
 * plot V(cout_dup_inv) V(cout_dup)+2 V(Cout)+4
 * V(cout_out)+4
