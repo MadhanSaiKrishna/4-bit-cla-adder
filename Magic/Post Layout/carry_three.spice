@@ -8,9 +8,9 @@ Vdd vdd gnd 'SUPPLY'
 
 V1 A0 gnd pulse 0 1.8 0u 10p 10p 0.05u 0.2u
 V2 B0 gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
-V3 cin gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
-V4 A1 gnd dc 0
-V5 B1 gnd dc 0
+V3 cin gnd dc 0
+V4 A1 gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
+V5 B1 gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
 V6 A2 gnd pulse 0 1.8 0u 10p 10p 0.05u 0.2u
 V7 B2 gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
 

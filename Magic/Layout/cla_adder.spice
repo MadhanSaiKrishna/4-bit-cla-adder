@@ -1165,9 +1165,12 @@ set color0=white
 set color1=black
 run
 
-plot V(a0) V(b0)+2 V(cin)+4 V(c1)+6
-plot V(a1) V(b1)+2 V(c1)+4 V(c2)+6
-*plot V(a2) V(b2)+2 V(c2)+4 V(c3)+6
+*plot V(a0) V(b0)+2 V(cin)+4 V(c1)+6
+*plot V(a1) V(b1)+2 V(c1)+4 V(c2)+6
+plot V(a0) V(b0)+2 V(a1)+4 V(b1)+6
+plot V(a2) V(b2)+2 V(c3)+4
+*plot V(a0) V(b0)+2 V(a1)+4 V(b1)+6 
+*plot V(a2) V(b2)+2 V(a3)+4 V(b3)+6 V(cout)+8
 *plot V(a3) V(b3)+2 V(cout)+4
 .endc
 .end
