@@ -1,0 +1,152 @@
+* SPICE3 file created from carry_one.ext - technology: scmos
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA=0.09u
+.global gnd vdd
+Vdd vdd gnd 'SUPPLY'
+
+V1 A0 gnd pulse 0 1.8 0u 10p 10p 0.05u 0.2u
+V2 B0 gnd dc 0
+V3 cin gnd dc 0
+V4 A1 gnd pulse 0 1.8 0u 10p 10p 0.15u 0.3u
+V5 B1 gnd pulse 0 1.8 0u 10p 10p 0.2u 0.15u
+V6 A2 gnd pulse 0 1.8 0u 10p 10p 0.05u 0.2u
+V7 B2 gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
+
+M1000 a_341_n75# a1 a_353_63# w_316_57# CMOSP w=40 l=2
++  ad=600 pd=190 as=1000 ps=290
+M1001 a_329_63# a1 vdd w_316_57# CMOSP w=40 l=2
++  ad=400 pd=100 as=800 ps=280
+M1002 a_353_n75# a0 a_389_n75# Gnd CMOSN w=20 l=2
++  ad=500 pd=170 as=300 ps=110
+M1003 a_353_63# a_452_n79# a_389_63# w_441_57# CMOSP w=40 l=2
++  ad=0 pd=0 as=600 ps=190
+M1004 a_341_n75# b1 a_329_63# w_316_57# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 a_353_63# b1 a_341_n75# w_316_57# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 a_341_n75# a1 a_353_n75# Gnd CMOSN w=20 l=2
++  ad=300 pd=110 as=0 ps=0
+M1007 c2 a_341_n75# gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=400 ps=160
+M1008 a_353_n75# b1 a_341_n75# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 a_365_63# b0 a_353_63# w_316_57# CMOSP w=40 l=2
++  ad=400 pd=100 as=0 ps=0
+M1010 vdd a0 a_365_63# w_316_57# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 a_365_n75# b0 a_353_n75# Gnd CMOSN w=20 l=2
++  ad=200 pd=60 as=0 ps=0
+M1012 a_389_63# cin vdd w_316_57# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1013 a_353_63# a0 a_389_63# w_316_57# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1014 a_329_n75# a1 gnd Gnd CMOSN w=20 l=2
++  ad=200 pd=60 as=0 ps=0
+M1015 gnd a0 a_365_n75# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 a_353_n75# a_452_n79# a_389_n75# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1017 a_341_n75# b1 a_329_n75# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1018 a_389_n75# cin gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1019 c2 a_341_n75# vdd w_526_40# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+C0 b0 a_353_n75# 0.08fF
+C1 a_353_63# a_365_63# 0.41fF
+C2 vdd a_365_63# 0.41fF
+C3 a1 a_353_n75# 0.01fF
+C4 vdd a_329_63# 0.41fF
+C5 a_452_n79# a_341_n75# 0.06fF
+C6 cin a_353_63# 0.08fF
+C7 a_353_n75# a_389_n75# 0.56fF
+C8 b0 a_341_n75# 0.14fF
+C9 c2 w_526_40# 0.06fF
+C10 a0 cin 1.23fF
+C11 a_341_n75# a1 0.19fF
+C12 a_389_63# w_316_57# 0.03fF
+C13 b1 a0 0.15fF
+C14 gnd a_353_n75# 0.05fF
+C15 a_341_n75# w_316_57# 0.09fF
+C16 vdd w_526_40# 0.06fF
+C17 a_341_n75# a_389_n75# 0.03fF
+C18 b0 a1 0.24fF
+C19 a_341_n75# a_329_n75# 0.21fF
+C20 b0 w_316_57# 0.06fF
+C21 cin a_353_n75# 0.08fF
+C22 a_341_n75# gnd 0.04fF
+C23 w_316_57# a1 0.13fF
+C24 vdd c2 0.41fF
+C25 a_329_63# a_341_n75# 0.41fF
+C26 cin a_341_n75# 0.14fF
+C27 a0 a_353_63# 0.15fF
+C28 a_353_n75# a_365_n75# 0.26fF
+C29 b1 a_341_n75# 0.14fF
+C30 b0 cin 0.08fF
+C31 gnd a_389_n75# 1.00fF
+C32 a_365_63# w_316_57# 0.02fF
+C33 a_353_63# w_441_57# 0.06fF
+C34 a_341_n75# w_526_40# 0.08fF
+C35 b1 b0 0.55fF
+C36 gnd a_329_n75# 0.21fF
+C37 cin a1 0.24fF
+C38 a_329_63# w_316_57# 0.02fF
+C39 cin w_316_57# 0.06fF
+C40 b1 a1 0.64fF
+C41 b1 w_316_57# 0.13fF
+C42 a0 a_353_n75# 0.15fF
+C43 a_341_n75# c2 0.05fF
+C44 a_353_63# a_389_63# 0.82fF
+C45 a_341_n75# a_353_63# 1.00fF
+C46 vdd a_389_63# 0.97fF
+C47 a_452_n79# a_353_63# 0.01fF
+C48 a0 a_341_n75# 0.20fF
+C49 b0 a_353_63# 0.08fF
+C50 a_389_63# w_441_57# 0.06fF
+C51 a_353_63# a1 0.01fF
+C52 b0 a0 0.63fF
+C53 b1 cin 0.15fF
+C54 gnd a_365_n75# 0.21fF
+C55 a_353_63# w_316_57# 0.06fF
+C56 vdd w_316_57# 0.10fF
+C57 a0 a1 0.92fF
+C58 a_452_n79# w_441_57# 0.07fF
+C59 a_341_n75# a_353_n75# 0.58fF
+C60 a0 w_316_57# 0.13fF
+C61 c2 gnd 0.21fF
+C62 a_452_n79# a_353_n75# 0.08fF
+C63 a_389_n75# Gnd 0.24fF
+C64 a_365_n75# Gnd 0.02fF
+C65 a_353_n75# Gnd 0.65fF
+C66 a_329_n75# Gnd 0.02fF
+C67 gnd Gnd 1.21fF
+C68 c2 Gnd 0.11fF
+C69 a_389_63# Gnd 0.21fF
+C70 a_365_63# Gnd 0.00fF
+C71 a_353_63# Gnd 0.73fF
+C72 a_341_n75# Gnd 1.91fF
+C73 a_329_63# Gnd 0.00fF
+C74 vdd Gnd 0.85fF
+C75 a_452_n79# Gnd 0.69fF
+C76 cin Gnd 0.94fF
+C77 a0 Gnd 1.94fF
+C78 b0 Gnd 0.88fF
+C79 b1 Gnd 1.64fF
+C80 a1 Gnd 2.30fF
+C81 w_526_40# Gnd 1.25fF
+C82 w_441_57# Gnd 1.25fF
+C83 w_316_57# Gnd 5.64fF
+
+.tran 0.1n 1u
+
+.control
+set hcopypscolor = 1 
+set color0=white
+set color1=black
+run
+
+plot V(a0) V(b0)+2 V(cin)+4 V(a1)+6 V(b1)+8 V(c2)+10
+.endc
+.end
