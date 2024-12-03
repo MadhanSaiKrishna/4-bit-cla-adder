@@ -1,0 +1,283 @@
+* SPICE3 file created from carry_one.ext - technology: scmos
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA=0.09u
+.global gnd vdd
+Vdd vdd gnd 'SUPPLY'
+
+V1 A0 gnd pulse 0 1.8 0u 10p 10p 0.05u 0.2u
+V2 B0 gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
+V3 cin gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
+V4 A1 gnd dc 0
+V5 B1 gnd dc 0
+V6 A2 gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
+V7 B2 gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
+V8 a3 gnd pulse 0 1.8 0u 10p 10p 0.1u 0.15u
+V9 B3 gnd dc 0
+
+M1000 a_n345_131# b2 a_n297_131# w_n386_125# CMOSP w=40 l=2
++  ad=1000 pd=290 as=1000 ps=290
+M1001 vdd a0 a_n249_131# w_n386_125# CMOSP w=40 l=2
++  ad=1200 pd=380 as=400 ps=100
+M1002 a_n369_n207# a3 gnd Gnd CMOSN w=20 l=2
++  ad=200 pd=60 as=600 ps=220
+M1003 a_n345_n207# b2 a_n297_n207# Gnd CMOSN w=20 l=2
++  ad=500 pd=170 as=500 ps=170
+M1004 a_n357_n207# b3 a_n369_n207# Gnd CMOSN w=20 l=2
++  ad=300 pd=110 as=0 ps=0
+M1005 a_n357_n207# b3 a_n369_131# w_n386_125# CMOSP w=40 l=2
++  ad=600 pd=190 as=400 ps=100
+M1006 a_n297_131# b1 a_n309_131# w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=400 ps=100
+M1007 a_n297_n207# a1 a_n261_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=500 ps=170
+M1008 a_n297_n207# b1 a_n309_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=200 ps=60
+M1009 cout_new a_n357_n207# vdd w_n93_66# CMOSP w=40 l=2
++  ad=200 pd=90 as=0 ps=0
+M1010 a_n261_n207# b0 a_n225_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=300 ps=110
+M1011 a_n357_n207# a3 a_n345_131# w_n137_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 a_n261_131# b0 a_n225_131# w_n176_125# CMOSP w=40 l=2
++  ad=1000 pd=290 as=600 ps=190
+M1013 a_n309_131# a1 vdd w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1014 a_n261_n207# a0 a_n225_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1015 a_n297_131# a1 a_n261_131# w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 a_n249_131# b0 a_n261_131# w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1017 a_n309_n207# a1 gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1018 a_n225_n207# cin gnd Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1019 a_n369_131# a3 vdd w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1020 vdd a2 a_n333_131# w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=400 ps=100
+M1021 a_n261_131# b1 a_n297_131# w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 a_n261_131# a0 a_n225_131# w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1023 a_n249_n207# b0 a_n261_n207# Gnd CMOSN w=20 l=2
++  ad=200 pd=60 as=0 ps=0
+M1024 gnd a2 a_n333_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=200 ps=60
+M1025 gnd a0 a_n249_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1026 a_n333_131# b2 a_n345_131# w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1027 a_n261_n207# b1 a_n297_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1028 a_n297_131# a2 a_n345_131# w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1029 a_n225_131# cin vdd w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 a_n333_n207# b2 a_n345_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1031 cout_new a_n357_n207# gnd Gnd CMOSN w=20 l=2
++  ad=100 pd=50 as=0 ps=0
+M1032 a_n297_n207# a2 a_n345_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1033 a_n357_n207# a3 a_n345_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+M1034 a_n345_131# b3 a_n357_n207# w_n386_125# CMOSP w=40 l=2
++  ad=0 pd=0 as=0 ps=0
+M1035 a_n345_n207# b3 a_n357_n207# Gnd CMOSN w=20 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 a1 b0 1.18fF
+C1 a2 a0 0.18fF
+C2 w_n176_125# a_n225_131# 0.06fF
+C3 w_n386_125# a_n333_131# 0.02fF
+C4 w_n386_125# vdd 0.14fF
+C5 a2 a1 1.43fF
+C6 b0 a_n261_n207# 0.23fF
+C7 w_n386_125# b0 0.06fF
+C8 b0 a_n297_n207# 0.09fF
+C9 a_n225_131# a_n261_131# 1.79fF
+C10 w_n386_125# a2 0.13fF
+C11 a2 a_n297_n207# 0.09fF
+C12 w_n176_125# a_n261_131# 0.06fF
+C13 b0 a_n345_n207# 0.21fF
+C14 b2 b0 0.18fF
+C15 b3 a0 0.18fF
+C16 vdd a_n225_131# 0.41fF
+C17 a3 a0 0.41fF
+C18 cout_new a_n357_n207# 0.05fF
+C19 w_n137_125# a_n345_131# 0.06fF
+C20 w_n93_66# a_n357_n207# 0.08fF
+C21 a2 a_n345_n207# 0.21fF
+C22 b2 a2 2.09fF
+C23 b3 a1 0.36fF
+C24 w_n137_125# a_n357_n207# 0.06fF
+C25 a3 a1 0.50fF
+C26 w_n176_125# b0 0.06fF
+C27 gnd a_n249_n207# 0.21fF
+C28 a_n225_n207# gnd 0.21fF
+C29 b3 w_n386_125# 0.14fF
+C30 a_n309_131# a_n297_131# 0.41fF
+C31 a3 w_n386_125# 0.06fF
+C32 gnd a_n309_n207# 0.21fF
+C33 gnd a_n333_n207# 0.21fF
+C34 a0 a_n297_131# 0.21fF
+C35 vdd a_n333_131# 0.41fF
+C36 b0 a_n261_131# 0.18fF
+C37 b3 b2 0.91fF
+C38 a3 a_n345_n207# 1.49fF
+C39 b2 a3 0.41fF
+C40 gnd a_n369_n207# 0.21fF
+C41 a0 a_n345_131# 0.15fF
+C42 a1 a_n297_131# 0.10fF
+C43 a0 cin 2.39fF
+C44 a0 a_n357_n207# 0.25fF
+C45 a_n369_131# a_n357_n207# 0.41fF
+C46 w_n93_66# cout_new 0.06fF
+C47 a1 a_n345_131# 0.15fF
+C48 b1 a0 0.18fF
+C49 a1 cin 0.30fF
+C50 w_n386_125# a_n297_131# 0.19fF
+C51 a1 a_n357_n207# 0.35fF
+C52 a1 b1 1.90fF
+C53 a2 b0 0.18fF
+C54 cin a_n261_n207# 0.12fF
+C55 w_n386_125# a_n345_131# 0.07fF
+C56 w_n386_125# cin 0.06fF
+C57 cin a_n297_n207# 0.09fF
+C58 w_n386_125# a_n357_n207# 0.03fF
+C59 b2 a_n297_131# 0.10fF
+C60 w_n386_125# b1 0.13fF
+C61 b1 a_n297_n207# 0.09fF
+C62 cin a_n345_n207# 0.10fF
+C63 b2 a_n345_131# 0.15fF
+C64 b2 cin 0.18fF
+C65 a_n225_131# a_n297_131# 0.16fF
+C66 a_n345_n207# a_n357_n207# 1.23fF
+C67 b2 a_n357_n207# 0.41fF
+C68 a_n369_n207# a_n357_n207# 0.21fF
+C69 b1 a_n345_n207# 0.21fF
+C70 b3 b0 0.18fF
+C71 b2 b1 1.22fF
+C72 a3 b0 1.49fF
+C73 b3 a2 0.21fF
+C74 a3 a2 0.44fF
+C75 a_n297_131# a_n261_131# 1.20fF
+C76 cin a_n261_131# 0.09fF
+C77 a_n345_131# a_n333_131# 0.41fF
+C78 b0 a_n297_131# 0.10fF
+C79 b3 a3 0.91fF
+C80 b0 a_n345_131# 0.15fF
+C81 a2 a_n297_131# 0.10fF
+C82 b0 cin 0.28fF
+C83 w_n386_125# a_n249_131# 0.02fF
+C84 b0 a_n357_n207# 0.25fF
+C85 a2 a_n345_131# 0.15fF
+C86 b1 b0 0.99fF
+C87 a2 cin 0.18fF
+C88 a1 a0 0.85fF
+C89 w_n386_125# a_n309_131# 0.02fF
+C90 a2 a_n357_n207# 0.32fF
+C91 a0 a_n225_n207# 0.09fF
+C92 a2 b1 1.23fF
+C93 a0 a_n261_n207# 0.23fF
+C94 w_n386_125# a0 0.13fF
+C95 a0 a_n297_n207# 0.18fF
+C96 w_n386_125# a_n369_131# 0.02fF
+C97 a1 a_n225_n207# 0.09fF
+C98 a1 a_n261_n207# 0.12fF
+C99 w_n386_125# a1 0.13fF
+C100 a1 a_n297_n207# 0.09fF
+C101 a0 a_n345_n207# 0.21fF
+C102 a_n261_n207# a_n249_n207# 0.21fF
+C103 b2 a0 0.18fF
+C104 b3 cin 0.18fF
+C105 a_n225_n207# a_n261_n207# 0.78fF
+C106 vdd cout_new 0.41fF
+C107 b3 a_n357_n207# 0.17fF
+C108 w_n93_66# vdd 0.06fF
+C109 a3 cin 0.32fF
+C110 a_n225_n207# a_n297_n207# 0.14fF
+C111 gnd a_n357_n207# 0.04fF
+C112 a3 a_n357_n207# 0.24fF
+C113 a_n297_n207# a_n261_n207# 0.83fF
+C114 a1 a_n345_n207# 0.21fF
+C115 b3 b1 0.18fF
+C116 b2 a1 0.51fF
+C117 a0 a_n225_131# 0.09fF
+C118 a3 b1 0.41fF
+C119 a_n309_n207# a_n297_n207# 0.21fF
+C120 a_n261_131# a_n249_131# 0.41fF
+C121 a1 a_n225_131# 0.09fF
+C122 a_n345_n207# a_n297_n207# 0.77fF
+C123 b2 w_n386_125# 0.13fF
+C124 b2 a_n297_n207# 0.09fF
+C125 vdd a_n249_131# 0.41fF
+C126 a_n345_n207# a_n333_n207# 0.21fF
+C127 w_n386_125# a_n225_131# 0.03fF
+C128 a_n345_131# a_n297_131# 1.27fF
+C129 vdd a_n309_131# 0.41fF
+C130 cin a_n297_131# 0.10fF
+C131 a0 a_n261_131# 0.18fF
+C132 b2 a_n345_n207# 0.21fF
+C133 cin a_n345_131# 0.08fF
+C134 b1 a_n297_131# 0.10fF
+C135 a1 a_n261_131# 0.09fF
+C136 a_n357_n207# a_n345_131# 1.48fF
+C137 cin a_n357_n207# 0.17fF
+C138 vdd a_n369_131# 0.41fF
+C139 cout_new gnd 0.21fF
+C140 b1 a_n345_131# 0.15fF
+C141 b1 cin 0.18fF
+C142 b0 a0 2.08fF
+C143 a3 w_n137_125# 0.06fF
+C144 w_n386_125# a_n261_131# 0.11fF
+C145 b1 a_n357_n207# 0.25fF
+C146 a_n225_n207# Gnd 0.30fF
+C147 a_n249_n207# Gnd 0.02fF
+C148 a_n261_n207# Gnd 0.89fF
+C149 a_n297_n207# Gnd 1.29fF
+C150 a_n309_n207# Gnd 0.02fF
+C151 a_n333_n207# Gnd 0.02fF
+C152 a_n345_n207# Gnd 2.00fF
+C153 a_n369_n207# Gnd 0.02fF
+C154 gnd Gnd 2.09fF
+C155 cout_new Gnd 0.10fF
+C156 a_n225_131# Gnd 0.23fF
+C157 a_n249_131# Gnd 0.00fF
+C158 a_n261_131# Gnd 0.59fF
+C159 a_n297_131# Gnd 0.98fF
+C160 a_n309_131# Gnd 0.00fF
+C161 a_n333_131# Gnd 0.00fF
+C162 a_n345_131# Gnd 1.46fF
+C163 a_n357_n207# Gnd 4.42fF
+C164 a_n369_131# Gnd 0.00fF
+C165 vdd Gnd 1.28fF
+C166 cin Gnd 2.45fF
+C167 a0 Gnd 4.64fF
+C168 b0 Gnd 4.96fF
+C169 b1 Gnd 4.59fF
+C170 a1 Gnd 5.36fF
+C171 a2 Gnd 4.58fF
+C172 b2 Gnd 4.54fF
+C173 b3 Gnd 4.07fF
+C174 a3 Gnd 6.12fF
+C175 w_n93_66# Gnd 1.25fF
+C176 w_n137_125# Gnd 1.33fF
+C177 w_n176_125# Gnd 1.33fF
+C178 w_n386_125# Gnd 10.49fF
+
+.tran 0.1n 1u
+
+.control
+set hcopypscolor = 1 
+set color0=white
+set color1=black
+run
+
+plot V(a0) V(b0)+2 V(cin)+4 V(a1)+6 V(b1)+8 
+plot V(a2) V(b2)+2 V(a3)+4 V(b3)+8 V(cout_new)+10
+
+.endc
+.end
