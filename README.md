@@ -3,10 +3,6 @@
 
 ## To Do List
 
-- [x] Task 1: Size the mosfets in TSPC d flip flop
-- [x] Task 2: Change the sizing of the mosfets in PUN and PDN of carry and check the output (depending on the path the sizing can be decreased)
-- [ ] Task 3: Verify the output of S0_out, S1_out, S2_out, S3_out, C0,C1,C2,C3
-- [x] Task 4: Set the inital coditions for the carry and sum bits before the start of the positive edge of the clock
 - [ ] Task 5: Find the timing constraints, delay and power 
 consumption
 - [ ] Task 6: Calculate the propogation delay of the combinational circuit between the flip flops independently without these flip flops.
@@ -15,9 +11,6 @@ consumption
 - [ ] Task 9: Post layout simulations
 - [x] Task 10: Verilog code
 - [ ] Task 11: In the spice netlist connect both source and body together.
-- [ ] Task 12: Make a new d flip flop using cpl logic
-- [ ] Task 13: Verify if my inv magic file is working properly post layout.
-- [ ] Task 14: Check each node in the carry_out to find the bug.
 
 
 ## Tips
