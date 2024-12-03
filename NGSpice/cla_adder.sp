@@ -101,6 +101,7 @@ set hcopypscolor = 1
 set color0 = white
 *Grid and text color
 set color1 = black
+plot V(clk) V(a2)+2 V(s2_out)+4 V(s2)+6
 * plot V(clk) V(a2)+2 V(s2_out)+4 V(s2)+6
 * plot V(a3) V(b3)+2 V(C3)+4 V(cout)+6 
 * plot V(a0_in) V(a0)+2 V(clk)+4
