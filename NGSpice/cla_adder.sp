@@ -13,16 +13,16 @@
 .global gnd vdd
 Vdd vdd gnd 'SUPPLY'
 
-V1 A0_in gnd pulse 0 1.8 0u 10p 10p 0.1u 0.3u
-V2 B0_in gnd pulse 0 1.8 0.3u 10p 10p 0.1u 0.3u
-V3 A1_in gnd pulse 0 1.8 0.5u 10p 10p 0.01u 0.03u
-V4 B1_in gnd pulse 0 1.8 0u 10p 10p 0.02u 0.03u
-V5 A2_in gnd pulse 0 1.8 0.5u 10p 10p 0.1u 0.3u
-V6 B2_in gnd pulse 0 1.8 0u 10p 10p 0.1u 0.3u
-V7 A3_in gnd pulse 0 1.8 0.5u 10p 10p 0.01u 0.03u
-V8 B3_in gnd pulse 0 1.8 0u 10p 10p 0.02u 0.07u
+V1 A0_in gnd pulse 0 1.8 0 10p 10p 2n 4n
+V2 B0_in gnd pulse 0 1.8 0 10p 10p 3n 5n
+V3 A1_in gnd pulse 0 1.8 0 10p 10p 4n 6n
+V4 B1_in gnd pulse 0 1.8 0 10p 10p 5n 7n
+V5 A2_in gnd pulse 0 1.8 0 10p 10p 2n 4n
+V6 B2_in gnd pulse 0 1.8 0 10p 10p 3n 5n
+V7 A3_in gnd pulse 0 1.8 0 10p 10p 4n 6n
+V8 B3_in gnd pulse 0 1.8 0 10p 10p 5n 7n
 
-V9 clk gnd pulse 0 1.8 0.03u 10p 10p 60n 100n
+V9 clk gnd pulse 0 1.8 1.3n 10p 10p 2n 4n
 
 
 V10 Cin gnd dc 0
@@ -86,13 +86,13 @@ X28 S3_inv S3 vdd gnd inverter width_P = 20*LAMBDA width_N=10*LAMBDA
 
 * E1 cout_buff cout gnd value = {V(cout)}
 
-* X29 Cout_out cout clk vdd gnd dff
+.tran 0.01n 20n
 
-.tran 10n 1u
+.meas tran tpcq trig v(clk) val=0.9 td=0 rise=4 targ v(a0) val=0.9 td=0 rise = 1
+* .meas tran tpcq_f trig v(clk) val=0.9 td=0 fall=1 targ v(a0) val=0.9 td=0 fall=1
 
-* .measure tran tpcq trig v(clk) val=0.9 td=0 rise=3 targ v(a2) val=0.9 td=0 rise = 1
-* .measure tran tpd trig v(a2) val=0.9 td=0 rise = 1  targ v(s2_out) val=0.9 td=0 rise = 2
-* .measure tran tpcq trig v(clk) val=0.9 td=0 rise = 3  targ v(s2) val=0.9 td=0 fall = 1
+* .meas tran tpcq param = (tpcq_r + tpcq_f)/2
+
 
 .control
 run
@@ -101,17 +101,38 @@ set hcopypscolor = 1
 set color0 = white
 *Grid and text color
 set color1 = black
-plot V(clk) V(a2)+2 V(s2_out)+4 V(s2)+6
-* plot V(clk) V(a2)+2 V(s2_out)+4 V(s2)+6
-* plot V(a3) V(b3)+2 V(C3)+4 V(cout)+6 
-* plot V(a0_in) V(a0)+2 V(clk)+4
-* plot V(clk) V(A1_in)+2 V(A1)+4 V(B1_in)+6 V(B1)+8 
-* plot V(clk) V(A3)+2 V(B3)+4 V(c3)+6 V(S3)+8 V(cout)+10
-* plot v(clk) v(s1_out)+2 v(s1)+4
-* plot V(a0) V(b0)+2 V(cin)+4 V(a1)+6 V(b1)+8 V(c2)+10
-plot V(a2) V(b2)+2 V(c2)+4 V(c3)+6  
-* plot V(a3) V(b3)+2 V(c3)+4 V(cout)+6
-* +V(cout_out)+8 V(clk)+10
-* plot V(cout_dup_inv) V(cout_dup)+2 V(Cout)+4
-* V(cout_out)+4
+set curplottitle = Madhan-2023102030
+* plot V(clk) V(A0_in)+2 V(a0)+4 V(B0_in)+6 V(b0)+8
+* plot V(clk) V(S0)+2 V(C1)+4
+
+* plot V(clk) V(a0_in)+2 V(a0)+4
+* plot V(clk) V(a1_in)+2 V(a1)+4
+* plot V(clk) V(a2_in)+2 V(a2)+4
+* plot V(clk) V(a3_in)+2 V(a3)+4
+* plot V(clk) V(b0_in)+2 V(b0)+4
+* plot V(clk) V(b1_in)+2 V(b1)+4
+* plot V(clk) V(b2_in)+2 V(b2)+4
+* plot V(clk) V(b3_in)+2 V(b3)+4
+
+
+
+* plot V(a0) V(b0)+2 V(cin)+4 V(S0_out)+6 V(c1)+8
+* plot V(a1) V(b1)+2 V(c1)+4 V(S1_out)+6 V(c2)+8
+* plot V(a2) V(b2)+2 V(c2)+4 V(S2_out)+6 V(c3)+8
+* plot V(a3) V(b3)+2 V(c3)+4 V(S3_out)+6
+* plot V(clk) V(cout)+2
+
+* plot V(clk) V(s0_out)+2 V(s0)+4
+* plot V(clk) V(s1_out)+2 V(s1)+4
+* plot V(clk) V(s2_out)+2 V(s2)+4
+* plot V(clk) V(s3_out)+2 V(s3)+4
+* plot V(clk) V(cout)+4
+
+plot V(clk) V(a0_in)+2 V(b0_in)+4 V(cin)+6
+plot V(clk) V(a1_in)+2 V(b1_in)+4
+plot V(clk) V(a2_in)+2 V(b2_in)+4
+plot V(clk) V(a3_in)+2 V(b3_in)+4
+
+plot V(clk) V(s0)+2 V(s1)+4 V(s2)+6 V(s3)+8 V(cout)+10
+
 .endc

@@ -1922,7 +1922,6 @@ C1294 w_941_883# Gnd 1.33fF
 C1295 w_902_883# Gnd 1.33fF
 C1296 w_692_883# Gnd 10.49fF
 
-E1 s0_dup s0_out gnd value = {V(s0_out)}
 
 .tran 10n 1u
 

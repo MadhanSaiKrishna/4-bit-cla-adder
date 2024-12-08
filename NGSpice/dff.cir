@@ -3,8 +3,6 @@
 .param width_P = 40*LAMBDA
 .param width_N = 20*LAMBDA
 
-*
-
 M1 n1 b_in vdd vdd CMOSP W={2*width_P} L={2*LAMBDA}
 +AS={5*2*width_P*LAMBDA} PS={10*LAMBDA+2*2*width_P}
 +AD={5*2*width_P*LAMBDA} PD={10*LAMBDA+2*2*width_P}
