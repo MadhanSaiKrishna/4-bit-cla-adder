@@ -1,6 +1,6 @@
 magic
 tech scmos
-timestamp 1733258945
+timestamp 1733243286
 << nwell >>
 rect 692 883 889 936
 rect 902 883 927 936
@@ -2693,7 +2693,7 @@ rect 1468 -75 1472 40
 rect 1487 18 1491 64
 rect 1512 29 1516 37
 rect 1556 29 1560 37
-rect 1512 24 1568 29
+rect 1512 24 1575 29
 rect 1487 14 1511 18
 rect 1495 6 1524 10
 rect 1494 -4 1536 0
@@ -2771,7 +2771,7 @@ rect 1465 -382 1469 -267
 rect 1484 -289 1488 -243
 rect 1509 -278 1513 -270
 rect 1553 -278 1557 -270
-rect 1509 -283 1567 -278
+rect 1509 -283 1573 -278
 rect 1484 -293 1508 -289
 rect 1492 -301 1521 -297
 rect 1491 -311 1533 -307
@@ -3321,5 +3321,147 @@ rect 583 -522 1129 -515
 rect 570 -535 1112 -530
 rect 558 -547 1096 -542
 << labels >>
-rlabel metal1 1560 -283 1567 -278 1 s0_out
+rlabel metal1 -154 77 -154 77 1 clk
+rlabel metal1 -174 2 -174 2 1 gnd
+rlabel metal1 -81 187 -81 187 5 vdd
+rlabel metal1 -127 187 -127 187 5 vdd
+rlabel metal1 -170 188 -170 188 5 vdd
+rlabel metal1 -187 68 -185 71 3 a0_in
+rlabel metal1 -36 85 -33 87 1 a0
+rlabel metal1 14 77 14 77 1 clk
+rlabel metal1 -6 2 -6 2 1 gnd
+rlabel metal1 87 187 87 187 5 vdd
+rlabel metal1 41 187 41 187 5 vdd
+rlabel metal1 -2 188 -2 188 5 vdd
+rlabel metal1 -20 67 -14 72 1 a1_in
+rlabel metal1 132 84 136 88 1 a1
+rlabel metal1 180 77 180 77 1 clk
+rlabel metal1 160 2 160 2 1 gnd
+rlabel metal1 253 187 253 187 5 vdd
+rlabel metal1 207 187 207 187 5 vdd
+rlabel metal1 164 188 164 188 5 vdd
+rlabel space 146 67 152 73 1 a2_in
+rlabel space 298 83 303 89 1 a2
+rlabel metal1 345 77 345 77 1 clk
+rlabel metal1 325 2 325 2 1 gnd
+rlabel metal1 418 187 418 187 5 vdd
+rlabel metal1 372 187 372 187 5 vdd
+rlabel metal1 329 188 329 188 5 vdd
+rlabel metal1 311 67 316 72 1 a3_in
+rlabel metal1 463 84 467 88 1 a3
+rlabel metal2 503 84 508 88 1 a3
+rlabel metal2 504 73 508 77 1 a2
+rlabel space 504 61 509 67 1 a1
+rlabel metal1 -155 -174 -155 -174 1 clk
+rlabel metal1 -175 -249 -175 -249 1 gnd
+rlabel metal1 -82 -64 -82 -64 5 vdd
+rlabel metal1 -128 -64 -128 -64 5 vdd
+rlabel metal1 -171 -63 -171 -63 5 vdd
+rlabel metal1 13 -174 13 -174 1 clk
+rlabel metal1 -7 -249 -7 -249 1 gnd
+rlabel metal1 86 -64 86 -64 5 vdd
+rlabel metal1 40 -64 40 -64 5 vdd
+rlabel metal1 -3 -63 -3 -63 5 vdd
+rlabel metal1 179 -174 179 -174 1 clk
+rlabel metal1 159 -249 159 -249 1 gnd
+rlabel metal1 252 -64 252 -64 5 vdd
+rlabel metal1 206 -64 206 -64 5 vdd
+rlabel metal1 163 -63 163 -63 5 vdd
+rlabel metal1 344 -174 344 -174 1 clk
+rlabel metal1 324 -249 324 -249 1 gnd
+rlabel metal1 417 -64 417 -64 5 vdd
+rlabel metal1 371 -64 371 -64 5 vdd
+rlabel metal1 328 -63 328 -63 5 vdd
+rlabel metal1 -189 -184 -182 -179 3 b0_in
+rlabel space -38 -168 -34 -163 1 b0
+rlabel metal1 -21 -184 -15 -179 1 b1_in
+rlabel space 131 -168 135 -162 1 b1
+rlabel metal1 145 -184 150 -179 1 b2_in
+rlabel metal1 296 -167 299 -163 1 b2
+rlabel metal1 310 -184 315 -179 1 b3_in
+rlabel metal1 462 -167 466 -163 1 b3
+rlabel metal2 498 -167 503 -163 1 b3
+rlabel metal2 498 -178 503 -174 1 b2
+rlabel metal2 498 -189 503 -185 1 b1
+rlabel metal2 501 -199 506 -195 1 b0
+rlabel metal1 668 -26 674 -22 1 b0
+rlabel metal1 668 -1 672 3 1 a1
+rlabel metal1 681 360 686 364 1 a2
+rlabel metal1 682 351 687 355 1 b2
+rlabel metal1 683 335 687 339 1 b1
+rlabel metal1 683 325 687 329 1 a1
+rlabel metal1 685 309 689 313 1 b0
+rlabel metal1 685 268 690 273 1 cin
+rlabel metal1 942 372 949 376 7 c3
+rlabel metal1 930 141 930 141 1 gnd
+rlabel metal1 670 797 675 802 1 a3
+rlabel metal1 670 768 676 773 1 b2
+rlabel metal1 670 759 676 764 1 a2
+rlabel metal1 670 741 676 746 1 b1
+rlabel metal1 666 785 671 790 1 b3
+rlabel metal1 666 749 671 754 1 a1
+rlabel metal1 675 706 680 710 1 b0
+rlabel metal1 676 696 681 700 1 a0
+rlabel metal1 675 687 681 692 1 cin
+rlabel metal1 1007 817 1012 821 1 cout
+rlabel metal1 956 942 963 945 5 vdd
+rlabel space 521 52 526 58 1 a0
+rlabel metal1 689 -259 689 -259 1 b0
+rlabel metal1 702 -259 702 -259 1 a0
+rlabel metal1 713 -259 713 -259 1 cin
+rlabel metal1 725 -259 725 -259 1 a0
+rlabel metal1 763 -259 763 -259 1 b0
+rlabel metal1 793 -259 793 -259 5 vdd
+rlabel metal1 684 -331 684 -331 1 n010
+rlabel metal2 741 -328 741 -328 1 n010
+rlabel metal1 793 -402 793 -402 1 gnd
+rlabel metal2 738 -393 738 -393 1 n010
+rlabel metal1 777 -345 777 -345 1 n010
+rlabel metal1 809 -345 809 -345 1 c1
+rlabel metal1 707 -381 707 -381 1 gnd
+rlabel metal1 860 -116 867 -113 1 gnd
+rlabel metal1 686 0 689 3 3 a1
+rlabel metal1 687 -10 691 -6 3 b1
+rlabel metal1 688 -26 691 -22 3 b0
+rlabel metal1 688 -43 691 -39 3 cin
+rlabel m2contact 669 -43 674 -39 1 cin
+rlabel metal1 890 7 895 11 1 c2
+rlabel metal1 852 103 861 107 5 vdd
+rlabel metal1 915 516 915 516 5 vdd
+rlabel metal1 1259 -384 1259 -384 1 gnd
+rlabel metal1 1259 -182 1259 -182 5 vdd
+rlabel metal1 1300 -384 1300 -384 1 gnd
+rlabel metal1 1298 -181 1298 -181 5 vdd
+rlabel metal1 1431 -384 1431 -384 1 gnd
+rlabel metal1 1431 -182 1431 -182 5 vdd
+rlabel metal1 1472 -384 1472 -384 1 gnd
+rlabel metal1 1470 -181 1470 -181 5 vdd
+rlabel metal1 1564 -283 1573 -278 1 s0_out
+rlabel metal1 1262 -77 1262 -77 1 gnd
+rlabel metal1 1262 125 1262 125 5 vdd
+rlabel metal1 1303 -77 1303 -77 1 gnd
+rlabel metal1 1301 126 1301 126 5 vdd
+rlabel metal1 1434 -77 1434 -77 1 gnd
+rlabel metal1 1434 125 1434 125 5 vdd
+rlabel metal1 1475 -77 1475 -77 1 gnd
+rlabel metal1 1473 126 1473 126 5 vdd
+rlabel metal1 1264 212 1264 212 1 gnd
+rlabel metal1 1264 414 1264 414 5 vdd
+rlabel metal1 1305 212 1305 212 1 gnd
+rlabel metal1 1303 415 1303 415 5 vdd
+rlabel metal1 1436 212 1436 212 1 gnd
+rlabel metal1 1436 414 1436 414 5 vdd
+rlabel metal1 1477 212 1477 212 1 gnd
+rlabel metal1 1475 415 1475 415 5 vdd
+rlabel metal1 1568 313 1573 318 1 s2_out
+rlabel metal1 1269 500 1269 500 1 gnd
+rlabel metal1 1269 702 1269 702 5 vdd
+rlabel metal1 1310 500 1310 500 1 gnd
+rlabel metal1 1308 703 1308 703 5 vdd
+rlabel metal1 1441 500 1441 500 1 gnd
+rlabel metal1 1441 702 1441 702 5 vdd
+rlabel metal1 1482 500 1482 500 1 gnd
+rlabel metal1 1480 703 1480 703 5 vdd
+rlabel metal1 1571 601 1575 606 1 s3_out
+rlabel metal1 1564 24 1569 28 1 s1_out
 << end >>

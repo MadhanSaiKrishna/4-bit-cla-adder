@@ -9,8 +9,7 @@ consumption
 - [ ] Task 7: Find the setup time and hold time of the d flip flops i've used.
 - [ ] Task 8: magic layout of the circuit
 - [ ] Task 9: Post layout simulations
-- [x] Task 10: Verilog code
-- [ ] Task 11: In the spice netlist connect both source and body together.
+- [ ] Task 11: In SPICE body and source are not connected.
 
 
 ## Tips
@@ -22,23 +21,6 @@ consumption
 ## Doubts
 - My CMOS static XOR gate designed intially for three inputs didn't work out. Why?
 - Cascading two 2 input XOR gates which takes ai,bi,ai_inv, bi_inv as input didn't work but cascading two 2 input XOR gates which takes ai, bi and computes ai_inv, bi_inv worked. Why?
-
-## Delays
-For A0
-- tpcq (A0_in to A0)               =  2.366684e-10
-- tpd  (A0 to S0_out)               =  3.221874e-10
-- tpcq (S0_out to S0)                =  1.196978e-10
-
-For A1
-- tpcq (A1_in to A1)               =  1.781366e-10
-- tpd  (A1 to S1_out)               =  3.226738e-10
-- tpcq (S1_out to S1)               =  1.196977e-10
-
-For A2 
-- tpcq (A2_in to A2)                =  1.620914e-10
-- tpd  (A2 to S2_out)               =  3.183957e-10
-- tpcq (S2_out to S2)               =  1.276660e-10
-
 
 ## Note
 1. In the carry circuit, i've considered equal sizing for all the mosfets in PDN and PUN to make the layout symmetric and easier.  

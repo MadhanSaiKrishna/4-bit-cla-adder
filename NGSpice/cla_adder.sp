@@ -128,11 +128,11 @@ set curplottitle = Madhan-2023102030
 * plot V(clk) V(s3_out)+2 V(s3)+4
 * plot V(clk) V(cout)+4
 
-plot V(clk) V(a0_in)+2 V(b0_in)+4 V(cin)+6
-plot V(clk) V(a1_in)+2 V(b1_in)+4
-plot V(clk) V(a2_in)+2 V(b2_in)+4
-plot V(clk) V(a3_in)+2 V(b3_in)+4
+* plot V(clk) V(a0_in)+2 V(b0_in)+4 V(cin)+6
+* plot V(clk) V(a1_in)+2 V(b1_in)+4
+* plot V(clk) V(a2_in)+2 V(b2_in)+4
+* plot V(clk) V(a3_in)+2 V(b3_in)+4
 
-plot V(clk) V(s0)+2 V(s1)+4 V(s2)+6 V(s3)+8 V(cout)+10
+* plot V(clk) V(s0)+2 V(s1)+4 V(s2)+6 V(s3)+8 V(cout)+10
 
 .endc
