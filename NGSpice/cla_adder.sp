@@ -84,8 +84,6 @@ X27 S2_inv S2 vdd gnd inverter width_P = 20*LAMBDA width_N=10*LAMBDA
 X28 S3_inv S3 vdd gnd inverter width_P = 20*LAMBDA width_N=10*LAMBDA
 
 
-* E1 cout_buff cout gnd value = {V(cout)}
-
 .tran 0.01n 20n
 
 .meas tran tpcq trig v(clk) val=0.9 td=0 rise=4 targ v(a0) val=0.9 td=0 rise = 1
