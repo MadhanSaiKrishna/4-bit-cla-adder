@@ -22,7 +22,7 @@ V6 B2_in gnd pulse 0 1.8 0 10p 10p 3n 5n
 V7 A3_in gnd pulse 0 1.8 0 10p 10p 4n 6n
 V8 B3_in gnd pulse 0 1.8 0 10p 10p 5n 7n
 
-V9 clk gnd pulse 0 1.8 1.3n 10p 10p 2n 4n
+V9 clk gnd pulse 0 1.8 0n 10p 10p 4n 8n
 
 
 V10 Cin gnd dc 0
@@ -131,6 +131,6 @@ set curplottitle = Madhan-2023102030
 * plot V(clk) V(a2_in)+2 V(b2_in)+4
 * plot V(clk) V(a3_in)+2 V(b3_in)+4
 
-* plot V(clk) V(s0)+2 V(s1)+4 V(s2)+6 V(s3)+8 V(cout)+10
+plot V(clk) V(s0_out)+2 V(s1_out)+4 V(s2_out)+6 V(s3_out)+8 V(cout)+10
 
 .endc
