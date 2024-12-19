@@ -30,40 +30,42 @@ module my_nand(A,B,Y);
     assign Y = ~(A & B);
 endmodule
 
-module dff(clk,d,q);
+module dff(clk, d, q);
     input clk;
     input d;
-    output q;
-    my_not not_gate(d,d_not);
-    my_nand g1(d,clk,s_bar);
-    my_nand g2(d_not,clk,r_bar);
-    my_nand g3(s_bar,q_not,q);
-    my_nand g4(r_bar,q, q_not);
+    output reg q;
+
+    always @(posedge clk) begin
+        q <= d;
+    end
 endmodule
 
-module adder(A_in, B_in, Cin, sum, Cout,clk);
+
+module adder(A_in, B_in, Cin_in, sum, Cout,clk);
     input clk;
     input [3:0]A_in, B_in;
-    input Cin;
+    input Cin_in;
     output [3:0]sum;
     output Cout;
 
     wire [3:0] A, B;
+    wire Cin;
     wire P0, P1, P2, P3;
     wire G0, G1, G2, G3;
     wire C1, C2, C3;
     wire pc0, p1p0c0, p1g0, p2p1p0c0, p2p1g0, p2g1, p3p2p1p0c0, p3p2p1g0, p3p2g1, p3g2;
 
-    dff ff1(clk,A_in[0],A[0]);
-    dff ff2(clk,A_in[1],A[1]);
-    dff ff3(clk,A_in[2],A[2]);
-    dff ff4(clk,A_in[3],A[3]);
+    dff ff1(.clk(clk),.d(A_in[0]),.q(A[0]));
+    dff ff2(.clk(clk),.d(A_in[1]),.q(A[1]));
+    dff ff3(.clk(clk),.d(A_in[2]),.q(A[2]));
+    dff ff4(.clk(clk),.d(A_in[3]),.q(A[3]));
 
-    dff ff5(clk,B_in[0],B[0]);
-    dff ff6(clk,B_in[1],B[1]);
-    dff ff7(clk,B_in[2],B[2]);
-    dff ff8(clk,B_in[3],B[3]);
+    dff ff5(.clk(clk),.d(B_in[0]),.q(B[0]));
+    dff ff6(.clk(clk),.d(B_in[1]),.q(B[1]));
+    dff ff7(.clk(clk),.d(B_in[2]),.q(B[2]));
+    dff ff8(.clk(clk),.d(B_in[3]),.q(B[3]));
 
+    dff dff_cin(.clk(clk), .d(Cin_in), .q(Cin));
     
     my_xor g1(A[0], B[0],P0);
     my_xor g2(A[1], B[1],P1);
@@ -119,7 +121,7 @@ wire [3:0] sum;
 wire Cout;
 integer i;
 
-adder dut(.A_in(A),.B_in(B),.Cout(Cout),.sum(sum),.Cin(Cin),.clk(clk));
+adder dut(.A_in(A),.B_in(B),.Cout(Cout),.sum(sum),.Cin_in(Cin),.clk(clk));
 
 initial begin
     A = 4'b0;
@@ -132,21 +134,14 @@ initial begin
     forever #5 clk = ~clk;
 end
 
-initial begin 
-    for(i = 0; i< 16 ; i = i+1)
-    begin
-        A = i;
-        B = i;
-        Cin = 0;
-        #10;
-    end
-end
-
 initial begin
-    $monitor($time, " A = %4b , B = %4b , Cin = %b , Sum = %4b , Cout = %b, Clk : ", A, B, Cin, sum, Cout,clk);
-    #160;
-    $finish;
-end
+        #3 A = 4'b0100; B = 4'b0100; Cin = 1;
+        #20 $finish;
+    end
+
+    initial begin
+        $monitor($time, " A = %4b , B = %4b , Cin = %b , Sum = %4b , Cout = %b, Clk : ", A, B, Cin, sum, Cout,clk);
+    end
 
 initial begin
     $dumpfile("cla_adder.vcd");

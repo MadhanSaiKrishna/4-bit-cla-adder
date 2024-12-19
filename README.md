@@ -1,15 +1,22 @@
 ## Major Issues
 1. In the layout, substrate connections are not given.
+2. In the SPICE, body and source terminals are not connected.
 
 ## To Do List
 
-- [ ] Task 5: Find the timing constraints, delay and power 
-consumption
-- [ ] Task 6: Calculate the propogation delay of the combinational circuit between the flip flops independently without these flip flops.
-- [ ] Task 7: Find the setup time and hold time of the d flip flops i've used.
-- [ ] Task 8: magic layout of the circuit
-- [ ] Task 9: Post layout simulations
-- [ ] Task 11: In SPICE body and source are not connected.
+- [ ] Task 1: Find the timing constraints, delay and power consumption
+- [ ] Task 2: Calculate the propogation delay of the combinational circuit between the flip flops independently without these flip flops.
+- [ ] Task 3: Find the setup time and hold time of the d flip flops i've used.
+- [ ] Task 4: magic layout of the circuit
+- [ ] Task 5: Post layout simulations
+- [ ] Task 6: Fix the Verilog code - Output is appearing in the same rising edge
+- [ ] Task 7: Complete the FPGA work
+- [ ] Task 8: Stick diagrams, Pre-layout & Post-layout comaprisons, Floor Plan
+- [ ] Task 9: Complete the report
+- [ ] Task 10: Connect flip-flop for the Cin bit in layout
+- [ ] Task 11: Change the d-ff in the layout
+
+
 
 
 ## Tips
