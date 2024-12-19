@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/madha/Desktop/4_bit_adder_design.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module my_and
+INFO: [VRFC 10-311] analyzing module my_not
+INFO: [VRFC 10-311] analyzing module my_or
+INFO: [VRFC 10-311] analyzing module my_xor
+INFO: [VRFC 10-311] analyzing module my_nand
+INFO: [VRFC 10-311] analyzing module dff
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/madha/Desktop/4_bit_adder_testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/madha/Desktop/4_bit_adder/4_bit_adder.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

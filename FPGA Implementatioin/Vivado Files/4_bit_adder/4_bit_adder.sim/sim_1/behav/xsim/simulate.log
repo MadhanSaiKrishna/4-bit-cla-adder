@@ -1,0 +1,9 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+                   0 A = 0000 , B = 0000 , Cin = 0 , Sum = xxxx , Cout = x, Clk : 0
+                   3 A = 0100 , B = 0100 , Cin = 1 , Sum = xxxx , Cout = x, Clk : 0
+                   5 A = 0100 , B = 0100 , Cin = 1 , Sum = xxxx , Cout = x, Clk : 1
+                  10 A = 0100 , B = 0100 , Cin = 1 , Sum = xxxx , Cout = x, Clk : 0
+                  15 A = 0100 , B = 0100 , Cin = 1 , Sum = 1001 , Cout = 0, Clk : 1
+                  20 A = 0100 , B = 0100 , Cin = 1 , Sum = 1001 , Cout = 0, Clk : 0
+$finish called at time : 23 ns : File "C:/Users/madha/Desktop/4_bit_adder_testbench.v" Line 26
