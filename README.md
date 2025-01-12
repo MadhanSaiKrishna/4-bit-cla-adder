@@ -1,4 +1,4 @@
-## Major Issues
+## NOTE:
 1. In the layout, substrate connections are not given.
 2. In the SPICE, body and source terminals are not connected.
 
@@ -9,15 +9,11 @@
 - [ ] Task 3: Find the setup time and hold time of the d flip flops i've used.
 - [ ] Task 4: magic layout of the circuit
 - [ ] Task 5: Post layout simulations
-- [ ] Task 6: Fix the Verilog code - Output is appearing in the same rising edge
-- [ ] Task 7: Complete the FPGA work
-- [ ] Task 8: Stick diagrams, Pre-layout & Post-layout comaprisons, Floor Plan
-- [ ] Task 9: Complete the report
-- [ ] Task 10: Connect flip-flop for the Cin bit in layout
-- [ ] Task 11: Change the d-ff in the layout
-
-
-
+- [ ] Task 6: Complete the FPGA work
+- [ ] Task 7: Stick diagrams, Pre-layout & Post-layout comaprisons, Floor Plan
+- [ ] Task 8: Complete the report
+- [ ] Task 9: Connect flip-flop for the Cin bit in layout
+- [ ] Task 10: Change the d-ff in the layout
 
 ## Tips
 - While designing the cmos inverters, overshoots can be observed in the output when the input transition from high to low or low to high.  This might be due to rapid change in the input and there is no load capacitance to stabilize the output. You can model the parasitic capacitance at the output node with a small capacitance in the spice to avoid this. (`Note`: This is for pre layout simulations)

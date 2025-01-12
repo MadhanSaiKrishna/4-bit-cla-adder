@@ -6,7 +6,6 @@
 .include carry_two.cir
 .include carry_three.cir
 .include carry_out.cir
-.include cout_new.cir
 .include two_input_xor.cir
 .param SUPPLY=1.8
 .param LAMBDA=0.09u
@@ -24,26 +23,14 @@ V8 B3_in gnd pulse 0 1.8 0 10p 10p 5n 7n
 
 V9 clk gnd pulse 0 1.8 0n 10p 10p 4n 8n
 
+V10 Cin_in gnd pulse 0 1.8 0 10p 10p 5n 7n
 
-V10 Cin gnd dc 0
-
-*D Flip-flop test
-* X1 A0_in a clk vdd gnd dff
-* C1 a gnd 100f
-
-* .measure tran tpcq
-* + TRIG v(clk) VAL='SUPPLY/2' RISE=2
-* + TARG v(a) VAL='(SUPPLY)/2' RISE=1
-
-*Carry 1 Test
 X1 A0_in A0 clk vdd gnd dff
 X2 B0_in B0 clk vdd gnd dff
+Xcin Cin_in Cin clk vdd gnd dff
 
 X3 C1 A0 B0 Cin vdd gnd carry_one
-* Xinv1 C1_dup_inv C1_dup vdd gnd inverter width_P=20*LAMBDA width_N=10*LAMBDA
-* Xinv2 C1 C1_dup_inv vdd gnd inverter width_P=20*LAMBDA width_N=10*LAMBDA
 
-*Carry 2 Test
 X4 A1_in A1 clk vdd gnd dff
 X5 B1_in B1 clk vdd gnd dff
 
@@ -57,8 +44,7 @@ X9 C3 A2 B2 A1 B1 A0 B0 Cin vdd gnd carry_three
 X10 A3_in A3 clk vdd gnd dff
 X11 B3_in B3 clk vdd gnd dff
 
-* X12 Cout_dup A3 B3 A2 B2 A1 B1 A0 B0 Cin vdd gnd carry_out
-X12 cout A3 B3 A2 B2 A1 B1 A0 B0 Cin clk vdd gnd cout_new
+X12 cout A3 B3 A2 B2 A1 B1 A0 B0 Cin clk vdd gnd carry_out
 
 X13 A0 B0 p0 vdd gnd two_xor
 X14 p0 Cin S0_out vdd gnd two_xor
@@ -83,14 +69,11 @@ X26 S1_inv S1 vdd gnd inverter width_P = 20*LAMBDA width_N=10*LAMBDA
 X27 S2_inv S2 vdd gnd inverter width_P = 20*LAMBDA width_N=10*LAMBDA
 X28 S3_inv S3 vdd gnd inverter width_P = 20*LAMBDA width_N=10*LAMBDA
 
+.tran 0.1n 70n
 
-.tran 0.01n 20n
-
-.meas tran tpcq trig v(clk) val=0.9 td=0 rise=4 targ v(a0) val=0.9 td=0 rise = 1
+* .meas tran tpcq trig v(clk) val=0.9 td=0 rise=4 targ v(a0) val=0.9 td=0 rise = 1
 * .meas tran tpcq_f trig v(clk) val=0.9 td=0 fall=1 targ v(a0) val=0.9 td=0 fall=1
-
 * .meas tran tpcq param = (tpcq_r + tpcq_f)/2
-
 
 .control
 run
@@ -112,13 +95,11 @@ set curplottitle = Madhan-2023102030
 * plot V(clk) V(b2_in)+2 V(b2)+4
 * plot V(clk) V(b3_in)+2 V(b3)+4
 
-
-
-* plot V(a0) V(b0)+2 V(cin)+4 V(S0_out)+6 V(c1)+8
-* plot V(a1) V(b1)+2 V(c1)+4 V(S1_out)+6 V(c2)+8
-* plot V(a2) V(b2)+2 V(c2)+4 V(S2_out)+6 V(c3)+8
-* plot V(a3) V(b3)+2 V(c3)+4 V(S3_out)+6
-* plot V(clk) V(cout)+2
+plot V(a0) V(b0)+2 V(cin)+4 V(S0_out)+6 V(c1)+8
+plot V(a1) V(b1)+2 V(c1)+4 V(S1_out)+6 V(c2)+8
+plot V(a2) V(b2)+2 V(c2)+4 V(S2_out)+6 V(c3)+8
+plot V(a3) V(b3)+2 V(c3)+4 V(S3_out)+6
+plot V(clk) V(cout)+2
 
 * plot V(clk) V(s0_out)+2 V(s0)+4
 * plot V(clk) V(s1_out)+2 V(s1)+4
